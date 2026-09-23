@@ -1,0 +1,22 @@
+# Configuración Netlify · Ber-Mely
+[build]
+  publish = "."
+  command = ""
+
+# Los JSON del menú nunca se guardan en caché: cada visita trae la versión más reciente
+[[headers]]
+  for = "/menu-del-dia.json"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/menu.json"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache"

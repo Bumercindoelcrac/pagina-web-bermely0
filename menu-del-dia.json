@@ -1,0 +1,45 @@
+{
+ "fecha": "2026-09-21",
+ "horario": "Lunes a viernes · 12:30 PM a 5:00 PM",
+ "tiempos": [
+  {
+   "nombre": "Sopa",
+   "incluido": true,
+   "opciones": [
+    "Consomé de pollo",
+    "Crema de elote",
+    "Sopa de fideo"
+   ]
+  },
+  {
+   "nombre": "Arroz o pasta",
+   "incluido": true,
+   "opciones": [
+    "Arroz rojo",
+    "Ensalada dulce"
+   ]
+  },
+  {
+   "nombre": "Guisado",
+   "incluido": false,
+   "opciones": [
+    {
+     "nombre": "Bistec a la mexicana",
+     "precio": 139
+    },
+    {
+     "nombre": "Pechuga empanizada",
+     "precio": 146
+    },
+    {
+     "nombre": "Chiles rellenos de queso",
+     "precio": 120
+    },
+    {
+     "nombre": "Milanesa de res",
+     "precio": 135
+    }
+   ]
+  }
+ ]
+}

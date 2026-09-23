@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ber-Mely · Restaurante Café · Tláhuac</title>
+<meta name="description" content="Ber-Mely Restaurante Café en San Francisco Tlaltenco, Tláhuac. Desayunos, menú del día, crepas, cafetería, cortes y mariscos. Sabor de casa.">
+<meta name="theme-color" content="#111111">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+<body>
+
+<div class="loader" id="loader"><img src="images/logo.png" alt=""><span class="loader-bar"></span></div>
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#inicio" class="brand"><img src="images/logo.png" alt="Ber-Mely" width="40" height="40"><span>Ber-Mely</span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#menu-dia">Menú del día</a>
+    <a href="#carta">Carta</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/525537317794?text=Hola%20Ber-Mely%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" class="nav-wa">Pedir por WhatsApp</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="cart-btn" id="cartBtn" aria-label="Carrito"><iconify-icon icon="ph:basket"></iconify-icon><span class="cart-count" id="cartCount">0</span></button>
+    <button class="burger" id="burger" aria-label="Menú" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-media"><img src="images/hero.jpg" alt="" class="hero-bg" data-parallax></div>
+  <div class="hero-inner">
+    <p class="eyebrow reveal-line"><span>Restaurante · Café</span><span class="dot"></span><span>San Francisco Tlaltenco</span></p>
+    <h1 class="hero-title"><span class="word">Sabor</span> <span class="word">de</span> <span class="word em">casa,</span><br><span class="word">todos</span> <span class="word">los</span> <span class="word">días.</span></h1>
+    <p class="hero-sub">Desayunos, comida corrida a tres tiempos, cortes, crepas y café de la mañana a la noche.</p>
+    <div class="hero-cta">
+      <a href="#carta" class="btn btn-yellow">Ver la carta <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+      <a href="#menu-dia" class="btn btn-ghost">Menú del día</a>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <span class="status" id="openStatus"></span>
+    <span class="hero-rating"><iconify-icon icon="ph:star-fill"></iconify-icon> 4.8 en Uber Eats</span>
+    <a href="#menu-dia" class="scroll-cue" aria-label="Bajar"><span></span></a>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Abierto todos los días desde 8:30 am</span><i></i><span>Desayunos 8:30 – 12:30</span><i></i><span>Menú del día L–V 12:30 – 17:00</span><i></i><span>Crepas & frappés</span><i></i><span>Cortes a la parrilla</span><i></i><span>Mariscos</span><i></i><span>Uber Eats · Rappi</span><i></i>
+    <span>Abierto todos los días desde 8:30 am</span><i></i><span>Desayunos 8:30 – 12:30</span><i></i><span>Menú del día L–V 12:30 – 17:00</span><i></i><span>Crepas & frappés</span><i></i><span>Cortes a la parrilla</span><i></i><span>Mariscos</span><i></i><span>Uber Eats · Rappi</span><i></i>
+  </div>
+</div>
+
+<!-- UBICACIÓN -->
+<section class="section section-dark" id="ubicacion">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><p class="label">Ubicación</p><h2 class="h2">Estamos en el pueblo de <em>San Francisco Tlaltenco.</em></h2></div></div>
+
+    <!-- Parte 1: mapa y distancia -->
+    <div class="loc-part reveal">
+      <div class="part-head"><span class="part-num">01</span><h3>Cómo llegar desde donde estás</h3></div>
+      <div class="dist-bar" id="distBar">
+        <div class="dist-ico"><iconify-icon icon="ph:navigation-arrow"></iconify-icon></div>
+        <div class="dist-txt">
+          <strong id="distMain">Activa tu ubicación para calcular la distancia</strong>
+          <span id="distSub">Solo se usa en tu navegador para medir qué tan lejos estás. No se guarda.</span>
+        </div>
+        <button class="btn btn-yellow" id="geoBtn"><iconify-icon icon="ph:crosshair"></iconify-icon> Usar mi ubicación</button>
+      </div>
+      <div class="map big-map">
+        <iframe id="mapFrame" title="Mapa Ber-Mely" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src=""></iframe>
+        <div class="map-cap map-cap-row">
+          <div><strong>Café Ber-Mely</strong>San Rafael Atlixco, San Francisco Tlaltenco, Tláhuac, 13440 Ciudad de México, CDMX</div>
+          <div class="map-actions">
+            <a class="btn btn-yellow" id="dirLink" target="_blank" rel="noopener" href="#">Ruta en Google Maps <iconify-icon icon="ph:arrow-up-right"></iconify-icon></a>
+            <a class="btn btn-ghost-dark" id="wazeLink" target="_blank" rel="noopener" href="#"><iconify-icon icon="simple-icons:waze"></iconify-icon> Waze</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Parte 2: horarios -->
+    <div class="loc-part reveal">
+      <div class="part-head"><span class="part-num">02</span><h3>Horarios</h3></div>
+      <div class="loc-card">
+        <div class="hours hours-3">
+          <div><span>Lunes</span><strong>8:30 am – 8:30 pm</strong></div>
+          <div><span>Martes</span><strong>8:30 am – 5:30 pm</strong></div>
+          <div><span>Miércoles</span><strong>8:30 am – 5:30 pm</strong></div>
+          <div><span>Jueves</span><strong>8:30 am – 8:30 pm</strong></div>
+          <div><span>Viernes</span><strong>8:30 am – 8:30 pm</strong></div>
+          <div><span>Sábado</span><strong>8:30 am – 8:30 pm</strong></div>
+          <div><span>Domingo</span><strong>9:30 am – 8:30 pm</strong></div>
+          <div><span>Desayunos</span><strong>8:30 – 12:30</strong></div>
+          <div><span>Menú del día (L–V)</span><strong>12:30 – 17:00</strong></div>
+        </div>
+        <p class="muted small">Los horarios de cierre pueden variar; publicamos cambios diarios en redes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENÚ DEL DÍA -->
+<section class="section section-light" id="menu-dia">
+  <div class="wrap grid-2 reveal">
+    <div class="md-media">
+      <img src="images/menu-dia.jpg" alt="Menú del día" data-parallax="0.08">
+      <div class="md-stamp"><strong>3</strong><small>tiempos</small></div>
+    </div>
+    <div class="md-copy">
+      <p class="label">Menú del día</p>
+      <h2 class="h2">Comida corrida, <em>como en casa.</em></h2>
+      <p class="lead" id="diaHorario">Lunes a viernes · 12:30 PM a 5:00 PM</p>
+      <ol class="steps">
+        <li><span>01</span><div><strong>Sopa</strong><p>Elige una. Incluida.</p></div></li>
+        <li><span>02</span><div><strong>Arroz o pasta</strong><p>Elige una. Incluida.</p></div></li>
+        <li><span>03</span><div><strong>Guisado</strong><p>Elige tu plato fuerte. Es lo único que pagas.</p></div></li>
+      </ol>
+      <p class="note">Incluye agua del día.</p>
+      <button class="btn btn-dark" id="openDia">Ver menú de hoy <iconify-icon icon="ph:arrow-up-right"></iconify-icon></button>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL MENÚ DEL DÍA -->
+<div class="modal-bg" id="diaModalBg"></div>
+<div class="modal" id="diaModal" role="dialog" aria-modal="true" aria-labelledby="diaTitle">
+  <div class="modal-head">
+    <div><p class="label" id="diaFecha">Hoy</p><h3 id="diaTitle">Menú del día</h3></div>
+    <button class="icon-btn" id="diaClose" aria-label="Cerrar"><iconify-icon icon="ph:x"></iconify-icon></button>
+  </div>
+  <div class="modal-body" id="diaCard"><p class="muted center">Cargando el menú de hoy…</p></div>
+</div>
+
+<!-- CARTA -->
+<section class="section section-dark" id="carta">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><p class="label">La carta</p><h2 class="h2">Todo lo que <em>cocinamos.</em></h2></div>
+      <div class="search"><iconify-icon icon="ph:magnifying-glass"></iconify-icon><input type="search" id="search" placeholder="Buscar platillo…" autocomplete="off"></div>
+    </div>
+    <div class="notice reveal">
+      <iconify-icon icon="ph:package"></iconify-icon>
+      <p><strong>Para recoger o a domicilio:</strong> se suman <strong>$10</strong> por platillo por empaque. En <strong>Cafetería, Crepería y Bebidas</strong> el cargo es de <strong>$5</strong>. Para comer aquí no aplica.</p>
+    </div>
+    <div class="tabs-wrap"><div class="tabs" id="tabs"></div></div>
+    <div id="panels"></div>
+  </div>
+</section>
+
+<!-- NÚMEROS -->
+<section class="section-light stats">
+  <div class="wrap stats-grid reveal">
+    <div><strong data-count="177">0</strong><span>platillos en carta</span></div>
+    <div><strong data-count="14">0</strong><span>categorías</span></div>
+    <div><strong data-count="3">0</strong><span>tiempos en el menú del día</span></div>
+    <div><strong data-count="4.8" data-dec="1">0</strong><span>calificación en Uber Eats</span></div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="section section-dark" id="galeria">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><p class="label">Galería</p><h2 class="h2">De la cocina <em>a tu mesa.</em></h2></div></div>
+    <div class="gallery reveal">
+      <figure class="g-big"><img src="images/molcajete.jpg" alt="Molcajete"><figcaption>Molcajete Ber-Mely</figcaption></figure>
+      <figure><img src="images/desayunos.jpg" alt="Chilaquiles"><figcaption>Chilaquiles</figcaption></figure>
+      <figure><img src="images/crepas.jpg" alt="Crepas"><figcaption>Crepas</figcaption></figure>
+      <figure><img src="images/cortes.jpg" alt="Cortes"><figcaption>Cortes</figcaption></figure>
+      <figure><img src="images/frappes.jpg" alt="Frappés"><figcaption>Frappés</figcaption></figure>
+      <figure class="g-wide"><img src="images/hamburguesa.jpg" alt="Hamburguesa"><figcaption>Hamburguesas</figcaption></figure>
+      <figure><img src="images/mariscos.jpg" alt="Mojarra"><figcaption>Del mar</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="section section-cafe">
+  <div class="wrap grid-2 reveal">
+    <div>
+      <p class="label">Nosotros</p>
+      <h2 class="h2">Un lugar del pueblo de Tlaltenco, <em>para todo el mundo.</em></h2>
+      <p class="lead">Cocinamos al momento, con porciones generosas y precios justos. Desayunos completos, menú del día a tres tiempos, platillos a la carta, antojitos mexicanos, mariscos toda la semana y cafetería con crepas y frappés a cualquier hora, todos los días.</p>
+      <p class="lead" style="margin-top:1rem">Los fines de semana: pancita y pozole, con tortillas hechas al momento en prensa.</p>
+      <ul class="pills">
+        <li>Al momento</li><li>Porciones generosas</li><li>Precios justos</li><li>Tortillas hechas a mano</li><li>Uber Eats · Rappi</li>
+      </ul>
+    </div>
+    <div class="about-img"><img src="images/hero.jpg" alt="Interior Ber-Mely" data-parallax="0.06"></div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section section-dark" id="contacto">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><p class="label">Contacto</p><h2 class="h2">Pide, pregunta o <em>reserva.</em></h2></div></div>
+    <div class="contact reveal">
+      <a href="https://wa.me/525537317794?text=Hola%20Ber-Mely%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener"><iconify-icon icon="ph:whatsapp-logo"></iconify-icon><div><strong>WhatsApp</strong><span>55 3731 7794</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+      <a href="https://wa.me/525539637021?text=Hola%20Ber-Mely%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener"><iconify-icon icon="ph:whatsapp-logo"></iconify-icon><div><strong>WhatsApp</strong><span>55 3963 7021</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+      <a href="tel:+525537317794"><iconify-icon icon="ph:phone"></iconify-icon><div><strong>Llamar</strong><span>55 3731 7794</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+      <a href="https://www.facebook.com/search/top?q=Ber-Mely" target="_blank" rel="noopener"><iconify-icon icon="ph:facebook-logo"></iconify-icon><div><strong>Facebook</strong><span>Ber-Mely</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+      <a href="https://www.tiktok.com/@restaurantecafebermely" target="_blank" rel="noopener"><iconify-icon icon="ph:tiktok-logo"></iconify-icon><div><strong>TikTok</strong><span>@restaurantecafebermely</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+      <a href="https://www.ubereats.com/mx/search?q=Ber-Mely" target="_blank" rel="noopener"><iconify-icon icon="simple-icons:ubereats"></iconify-icon><div><strong>Uber Eats</strong><span>Entrega a domicilio</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+      <a href="https://www.rappi.com.mx/restaurantes?query=Ber-Mely" target="_blank" rel="noopener"><iconify-icon icon="simple-icons:rappi"></iconify-icon><div><strong>Rappi</strong><span>Entrega a domicilio</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <img src="images/logo.png" alt="Ber-Mely" width="64" height="64">
+    <p>Nuestros platillos se preparan al momento para garantizar la frescura y calidad de cada ingrediente. Agradecemos su paciencia y preferencia.</p>
+    <p class="small">© <span id="year"></span> Ber-Mely Restaurante Café · Tláhuac, CDMX · Precios en MXN, sujetos a cambio.</p>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/525537317794?text=Hola%20Ber-Mely%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="WhatsApp"><iconify-icon icon="ph:whatsapp-logo"></iconify-icon></a>
+
+<!-- CARRITO -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart" id="cart" aria-label="Tu pedido">
+  <div class="cart-head"><div><p class="label">Tu pedido</p><h3>Carrito</h3></div><button class="icon-btn" id="cartClose" aria-label="Cerrar"><iconify-icon icon="ph:x"></iconify-icon></button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="field-row">
+      <label class="field">Nombre<input type="text" id="cName" placeholder="Tu nombre"></label>
+      <label class="field">Modo<select id="cMode"><option value="Para comer aquí">Comer aquí</option><option value="Para recoger">Para recoger</option><option value="A domicilio">A domicilio</option></select></label>
+    </div>
+    <label class="field">Notas<textarea id="cNotes" rows="2" placeholder="Sin cebolla, salsa aparte, dirección…"></textarea></label>
+    <div class="sub-rows" id="cartRows"></div>
+    <div class="total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+    <button class="btn btn-yellow full" id="sendWA"><iconify-icon icon="ph:whatsapp-logo"></iconify-icon> Enviar pedido por WhatsApp</button>
+    <button class="link-btn" id="clearCart">Vaciar carrito</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

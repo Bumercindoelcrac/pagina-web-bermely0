@@ -1,0 +1,1028 @@
+{
+ "categorias": [
+  {
+   "id": "desayunos",
+   "nombre": "Desayunos · 8:30 – 12:30 (incluye café o té)",
+   "icono": "ph:egg-crack",
+   "imagen": "images/desayunos.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Chilaquiles, enchiladas y…",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Chilaquiles verdes o rojos",
+       "precio": 96
+      },
+      {
+       "nombre": "Chilaquiles con huevo al gusto",
+       "precio": 116
+      },
+      {
+       "nombre": "Chilaquiles con pechuga a la plancha",
+       "precio": 133
+      },
+      {
+       "nombre": "Chilaquiles con bistec",
+       "precio": 139
+      },
+      {
+       "nombre": "Chilaquiles con costilla",
+       "precio": 159
+      },
+      {
+       "nombre": "Chilaquiles con cecina",
+       "precio": 159
+      },
+      {
+       "nombre": "Chilaquiles con arrachera",
+       "precio": 169
+      },
+      {
+       "nombre": "Enchiladas (verdes o rojas)",
+       "precio": 117
+      },
+      {
+       "nombre": "Enchiladas suizas",
+       "precio": 123
+      },
+      {
+       "nombre": "Enfrijoladas",
+       "precio": 107
+      },
+      {
+       "nombre": "Enmoladas",
+       "precio": 123
+      }
+     ]
+    },
+    {
+     "nombre": "Huevos al gusto",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Huevos divorciados",
+       "precio": 99
+      },
+      {
+       "nombre": "Huevos rancheros estilo Ber-Mely (queso panela con chapulines)",
+       "precio": 129
+      },
+      {
+       "nombre": "Huevos al gusto (jamón, tocino, salchicha, chorizo o a la mexicana)",
+       "precio": 96
+      },
+      {
+       "nombre": "Omelette clásico (jamón con queso)",
+       "precio": 106
+      },
+      {
+       "nombre": "Omelette (champiñones o espinacas)",
+       "precio": 113
+      }
+     ]
+    },
+    {
+     "nombre": "Molletes",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Molletes clásicos (pico de gallo con aguacate)",
+       "precio": 89
+      },
+      {
+       "nombre": "Molletes hawaianos (jamón, piña salteada, manchego y pico de gallo)",
+       "precio": 103
+      },
+      {
+       "nombre": "Molletes argentinos (chorizo argentino, manchego y pico de gallo)",
+       "precio": 109
+      },
+      {
+       "nombre": "Molletes chistorra (chistorra, manchego y pico de gallo)",
+       "precio": 109
+      },
+      {
+       "nombre": "Molletes de la granja (huevo estrellado, tocino, manchego y pico de gallo)",
+       "precio": 115
+      }
+     ]
+    },
+    {
+     "nombre": "Otros",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Hot cakes (2 pzas)",
+       "precio": 99
+      },
+      {
+       "nombre": "Sincronizadas (3 pzas, con pico de gallo)",
+       "precio": 93
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "entradas",
+   "nombre": "Entradas",
+   "icono": "ph:bowl-food",
+   "imagen": "images/menu-dia.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Entradas",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Orden de guacamole con totopos",
+       "precio": 85
+      },
+      {
+       "nombre": "Orden de frijoles refritos con totopos",
+       "precio": 50
+      },
+      {
+       "nombre": "Queso fundido con chapulines",
+       "precio": 96
+      },
+      {
+       "nombre": "Orden de chapulines con guacamole y queso panela",
+       "precio": 126
+      },
+      {
+       "nombre": "Consomé de pollo o sopa del día",
+       "precio": 30
+      },
+      {
+       "nombre": "Arroz del día o ensalada dulce",
+       "precio": 30
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "carta",
+   "nombre": "A la carta",
+   "icono": "ph:knife",
+   "imagen": "images/cortes.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Cortes y pechugas (con guacamole, frijoles refritos, papas y cebollitas cambray)",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Ribeye",
+       "precio": 346
+      },
+      {
+       "nombre": "New York",
+       "precio": 346
+      },
+      {
+       "nombre": "T-Bone",
+       "precio": 346
+      },
+      {
+       "nombre": "Sirloin",
+       "precio": 346
+      },
+      {
+       "nombre": "Picanha",
+       "precio": 346
+      },
+      {
+       "nombre": "Arrachera (ensalada, guacamole, frijoles y cebollitas)",
+       "precio": 289
+      },
+      {
+       "nombre": "Costilla de res",
+       "precio": 226
+      },
+      {
+       "nombre": "Orden de cecina",
+       "precio": 289
+      },
+      {
+       "nombre": "Pechuga rellena (jamón, manchego y Oaxaca)",
+       "precio": 166
+      },
+      {
+       "nombre": "Pechuga empanizada (ensalada, papas y frijoles)",
+       "precio": 146
+      },
+      {
+       "nombre": "Pechuga asada (ensalada, papas y frijoles)",
+       "precio": 139
+      },
+      {
+       "nombre": "Bistec a la mexicana o encebollado (frijoles y nopal asado)",
+       "precio": 139
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mar",
+   "nombre": "Algo del mar",
+   "icono": "ph:fish",
+   "imagen": "images/mariscos.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Algo del mar",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Mojarra frita (arroz, ensalada y papas)",
+       "precio": 219
+      },
+      {
+       "nombre": "Mojarra a la diabla (arroz, ensalada y papas)",
+       "precio": 219
+      },
+      {
+       "nombre": "Mojarra al mojo de ajo (arroz, ensalada y papas)",
+       "precio": 219
+      },
+      {
+       "nombre": "Camarones a la diabla (arroz, ensalada y papas)",
+       "precio": 219
+      },
+      {
+       "nombre": "Camarones empanizados (arroz, ensalada y papas)",
+       "precio": 219
+      },
+      {
+       "nombre": "Camarones al mojo de ajo (arroz, ensalada y papas)",
+       "precio": 219
+      },
+      {
+       "nombre": "Aguachile de camarón",
+       "precio": 219
+      },
+      {
+       "nombre": "Filete de pescado empanizado o al ajillo (ensalada, frijoles y papas)",
+       "precio": 156
+      },
+      {
+       "nombre": "Filete de pescado asado (ensalada, frijoles y papas)",
+       "precio": 146
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tacos",
+   "nombre": "Tacos y otros",
+   "icono": "ph:fork-knife",
+   "imagen": "images/cortes.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Incluye papas a la francesa, nopal asado y cebolla fileteada · +$27 con queso",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Arrachera (orden de 3)",
+       "precio": 136
+      },
+      {
+       "nombre": "Cecina (orden de 3)",
+       "precio": 136
+      },
+      {
+       "nombre": "Chorizo argentino o campechano con arrachera (orden de 3)",
+       "precio": 136
+      },
+      {
+       "nombre": "Bistec (orden de 3)",
+       "precio": 113
+      },
+      {
+       "nombre": "Campechano bistec/longaniza (orden de 3)",
+       "precio": 113
+      },
+      {
+       "nombre": "Al pastor (orden de 3)",
+       "precio": 93
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "burritos",
+   "nombre": "Burritos y alambres",
+   "icono": "ph:fire",
+   "imagen": "images/cortes.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Burritos",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Burrito galán (camarones en crema de chipotle)",
+       "precio": 156
+      },
+      {
+       "nombre": "Burrito paraíso (camarones empanizados con queso philadelphia)",
+       "precio": 156
+      },
+      {
+       "nombre": "Burrito de arrachera",
+       "precio": 139
+      },
+      {
+       "nombre": "Burrito de bistec o campechano",
+       "precio": 126
+      },
+      {
+       "nombre": "Burrito de longaniza",
+       "precio": 106
+      },
+      {
+       "nombre": "Burrito al pastor",
+       "precio": 99
+      }
+     ]
+    },
+    {
+     "nombre": "Alambres",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Alambre de arrachera",
+       "precio": 169
+      },
+      {
+       "nombre": "Alambre de pollo",
+       "precio": 149
+      },
+      {
+       "nombre": "Alambre de bistec, campechano, pastor o chuleta",
+       "precio": 146
+      },
+      {
+       "nombre": "Alambre fortachón (chuleta ahumada, tocino, chorizo y champiñón)",
+       "precio": 169
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "molcajetes",
+   "nombre": "Molcajetes",
+   "icono": "ph:cooking-pot",
+   "imagen": "images/molcajete.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Con cebolla cambray, nopal asado, queso panela, chicharrón y salsa de la casa",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Molcajete aguachile",
+       "precio": 553
+      },
+      {
+       "nombre": "Molcajete mar y tierra (camarones al ajillo, filete al ajillo, costilla de res, longaniza, arrachera y pechuga)",
+       "precio": 556
+      },
+      {
+       "nombre": "Molcajete Ber-Mely (pechuga, arrachera, costillas de res, chorizo argentino, chistorra y bistec)",
+       "precio": 556
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ensaladas",
+   "nombre": "Ensaladas",
+   "icono": "ph:leaf",
+   "imagen": "images/molcajete.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Ensaladas",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Ensalada Ber-Mely (mix de lechugas, espinacas, jitomate, cebolla morada, jícama, panela, queso azul, pechuga o bistec y chapulines)",
+       "precio": 159
+      },
+      {
+       "nombre": "Ensalada Primavera (lechugas, espinacas, mango, piña, durazno, pechuga o bistec, ajonjolí garapiñado y frutos finos)",
+       "precio": 139
+      },
+      {
+       "nombre": "Ensalada Campestre (lechugas, espinacas, elote, cebolla, ajonjolí garapiñado, frutos finos y huevo duro)",
+       "precio": 126
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "finde",
+   "nombre": "Exclusivos de sábados y domingos",
+   "icono": "ph:calendar-check",
+   "imagen": "images/molcajete.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Caldos · con tortillas hechas al momento",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Pancita de res",
+       "precio": 120
+      },
+      {
+       "nombre": "Pozole blanco (puerco, pollo o mixto)",
+       "precio": 120
+      }
+     ]
+    },
+    {
+     "nombre": "Caldos de gallina",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Pierna",
+       "precio": 86
+      },
+      {
+       "nombre": "Muslo",
+       "precio": 86
+      },
+      {
+       "nombre": "Rabadilla",
+       "precio": 76
+      },
+      {
+       "nombre": "Huacal",
+       "precio": 76
+      },
+      {
+       "nombre": "Ala",
+       "precio": 76
+      },
+      {
+       "nombre": "1/4 de pechuga",
+       "precio": 99
+      },
+      {
+       "nombre": "1/2 pechuga",
+       "precio": 116
+      },
+      {
+       "nombre": "Consomé con pechuga deshebrada",
+       "precio": 65
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bebidas",
+   "nombre": "Bebidas",
+   "icono": "ph:wine",
+   "imagen": "images/bebidas.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Jugos en vaso de 560 ml",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Naranja (Jumex)",
+       "precio": 40
+      },
+      {
+       "nombre": "Manzana (Jumex)",
+       "precio": 40
+      },
+      {
+       "nombre": "Durazno (Jumex)",
+       "precio": 40
+      },
+      {
+       "nombre": "Mango (Jumex)",
+       "precio": 40
+      }
+     ]
+    },
+    {
+     "nombre": "Aguas frescas 560 ml (1 litro $70 · jarra $130)",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Fresa mango",
+       "precio": 35
+      },
+      {
+       "nombre": "Piña guayaba",
+       "precio": 35
+      },
+      {
+       "nombre": "Horchata fresa",
+       "precio": 35
+      },
+      {
+       "nombre": "Sandía limón",
+       "precio": 35
+      },
+      {
+       "nombre": "Frutos rojos",
+       "precio": 35
+      }
+     ]
+    },
+    {
+     "nombre": "+ Bebidas",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Agua natural",
+       "precio": 15
+      },
+      {
+       "nombre": "Jugo de naranja natural",
+       "precio": 45
+      },
+      {
+       "nombre": "Naranjada natural o mineral",
+       "precio": 45
+      },
+      {
+       "nombre": "Limonada natural o mineral",
+       "precio": 45
+      },
+      {
+       "nombre": "Coca Cola",
+       "precio": 35
+      },
+      {
+       "nombre": "Sprite",
+       "precio": 35
+      },
+      {
+       "nombre": "Fanta",
+       "precio": 35
+      },
+      {
+       "nombre": "Sidral Mundet",
+       "precio": 35
+      },
+      {
+       "nombre": "Agua mineral",
+       "precio": 35
+      },
+      {
+       "nombre": "Sangría",
+       "precio": 35
+      },
+      {
+       "nombre": "Cerveza Modelo Especial (clara u oscura)",
+       "precio": 50
+      },
+      {
+       "nombre": "Cerveza Victoria",
+       "precio": 50
+      }
+     ]
+    },
+    {
+     "nombre": "Cervezas escarchadas (extra)",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Vaso escarchado (sal y limón, tamarindo c/ajonjolí y salsas)",
+       "precio": 15
+      },
+      {
+       "nombre": "Vaso michelado (sal, limón, tamarindo, Maggi e inglesa)",
+       "precio": 20
+      },
+      {
+       "nombre": "Vaso clamato (sal, limón, tamarindo y clamato)",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "nombre": "Jarras",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Jarra de limonada (natural o mineral)",
+       "precio": 160
+      },
+      {
+       "nombre": "Jarra de naranjada (natural o mineral)",
+       "precio": 160
+      }
+     ]
+    },
+    {
+     "nombre": "Coctelería · 12:00 – 17:00",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Cantaritos tequila Hornitos (tamarindo, naranja o frutos rojos)",
+       "precio": 120
+      },
+      {
+       "nombre": "Margarita frozen tequila Hornitos (naranja, tamarindo, mango)",
+       "precio": 120
+      },
+      {
+       "nombre": "Mojitos (clásico, frutos rojos)",
+       "precio": 130
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lomejor",
+   "nombre": "Lo mejor de la cafetería",
+   "icono": "ph:hamburger",
+   "imagen": "images/hamburguesa.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Hamburguesas + papas a la francesa",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Hamburguesa de res (jamón, queso amarillo y manchego)",
+       "precio": 116
+      },
+      {
+       "nombre": "Hamburguesa hawaiana (jamón, queso amarillo, manchego y piña)",
+       "precio": 126
+      },
+      {
+       "nombre": "Hamburguesa de pollo (jamón, queso amarillo y manchego)",
+       "precio": 126
+      },
+      {
+       "nombre": "Hamburguesa especial (jamón, tocino, queso amarillo, manchego, Oaxaca y champiñones)",
+       "precio": 159
+      },
+      {
+       "nombre": "Hamburguesa especial doble carne",
+       "precio": 179
+      }
+     ]
+    },
+    {
+     "nombre": "Sandwich's",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Club sandwich (pollo, jamón y tocino)",
+       "precio": 139
+      },
+      {
+       "nombre": "Club sandwich arrachera (arrachera y queso manchego)",
+       "precio": 190
+      },
+      {
+       "nombre": "Sandwich 4 quesos (manchego, amarillo, Oaxaca y panela)",
+       "precio": 149
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "snacks",
+   "nombre": "Snack's",
+   "icono": "ph:popcorn",
+   "imagen": "images/hamburguesa.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Snack's",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Hot dog sencillo (2 pzs)",
+       "precio": 79
+      },
+      {
+       "nombre": "Hot dog hawaiano (tocino, piña y queso) (2 pzs)",
+       "precio": 89
+      },
+      {
+       "nombre": "Hot dog especial (tocino, cebolla caramelizada, guacamole y manchego) (2 pzs)",
+       "precio": 113
+      },
+      {
+       "nombre": "Alitas 6 pzs (chipotle, mango habanero, tamarindo chipotle o búfalo)",
+       "precio": 83
+      },
+      {
+       "nombre": "Boneless",
+       "precio": 93
+      },
+      {
+       "nombre": "Papas a la francesa",
+       "precio": 63
+      },
+      {
+       "nombre": "Nachos",
+       "precio": 63
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "creperia",
+   "nombre": "La Crepería",
+   "icono": "ph:cookie",
+   "imagen": "images/crepas.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Saladas c/queso",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Jamón de pavo o pierna",
+       "precio": 109
+      },
+      {
+       "nombre": "Champiñones",
+       "precio": 109
+      },
+      {
+       "nombre": "Atún",
+       "precio": 109
+      }
+     ]
+    },
+    {
+     "nombre": "Especiales saladas",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Clasic (jamón, pechuga de pavo y manchego)",
+       "precio": 119
+      },
+      {
+       "nombre": "Chapis (jamón, champiñones y manchego)",
+       "precio": 119
+      },
+      {
+       "nombre": "Ber-mely (jamón, atún y manchego)",
+       "precio": 119
+      },
+      {
+       "nombre": "Hawaiana (jamón, piña y manchego)",
+       "precio": 119
+      }
+     ]
+    },
+    {
+     "nombre": "Crepas dulces",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Cajeta con plátano",
+       "precio": 86
+      },
+      {
+       "nombre": "Mermelada de zarzamora con queso",
+       "precio": 86
+      },
+      {
+       "nombre": "Lechera con nuez",
+       "precio": 86
+      },
+      {
+       "nombre": "Nutella con queso",
+       "precio": 86
+      },
+      {
+       "nombre": "Mermelada de frutos rojos con almendras",
+       "precio": 86
+      }
+     ]
+    },
+    {
+     "nombre": "Especiales",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Frutos tropicales (queso philadelphia, fresa, mango y kiwi)",
+       "precio": 99
+      },
+      {
+       "nombre": "Frutos rojos (frambuesas, fresa y cerezas)",
+       "precio": 99
+      },
+      {
+       "nombre": "La Rufi (queso philadelphia, zarzamora y almendras)",
+       "precio": 99
+      },
+      {
+       "nombre": "Delith (queso philadelphia, cajeta y plátano)",
+       "precio": 99
+      },
+      {
+       "nombre": "Peach (queso philadelphia, durazno y lechera)",
+       "precio": 99
+      },
+      {
+       "nombre": "Zeland (Nutella, durazno y kiwi)",
+       "precio": 99
+      },
+      {
+       "nombre": "Banana (queso philadelphia, nutella y plátano)",
+       "precio": 99
+      },
+      {
+       "nombre": "Ladyn (nutella, fresa y plátano)",
+       "precio": 99
+      },
+      {
+       "nombre": "Mely (queso philadelphia, fresa, arándanos y frutos finos)",
+       "precio": 99
+      },
+      {
+       "nombre": "Dulce manzana (queso philadelphia, manzana y cajeta)",
+       "precio": 99
+      },
+      {
+       "nombre": "3 quesos (philadelphia, manchego, mozzarella, lechera y nuez)",
+       "precio": 99
+      }
+     ]
+    },
+    {
+     "nombre": "Especiales con chocolate",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Kinder Buu (nutella, fresa y Kinder Bueno)",
+       "precio": 109
+      },
+      {
+       "nombre": "Kinder Deliss (queso philadelphia, nutella y Kinder Delice)",
+       "precio": 109
+      },
+      {
+       "nombre": "Roche (nutella, nuez y Ferrero Rocher)",
+       "precio": 109
+      }
+     ]
+    },
+    {
+     "nombre": "Crepas con licor",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Coronado (cajeta, queso philadelphia, nuez y rompope)",
+       "precio": 116
+      },
+      {
+       "nombre": "Khalua (nutella, cereza y Kahlúa)",
+       "precio": 116
+      },
+      {
+       "nombre": "Baileys (nutella, durazno y Baileys)",
+       "precio": 116
+      },
+      {
+       "nombre": "Malibu (queso philadelphia, piña, lechera y Malibú)",
+       "precio": 116
+      },
+      {
+       "nombre": "Amaretto (queso philadelphia, lechera, almendras y amaretto)",
+       "precio": 116
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cafeteria",
+   "nombre": "Cafetería",
+   "icono": "ph:coffee",
+   "imagen": "images/frappes.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Cafés calientes",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Café americano",
+       "precio": 46
+      },
+      {
+       "nombre": "Café expreso",
+       "precio": 46
+      },
+      {
+       "nombre": "Café capuchino",
+       "precio": 66
+      },
+      {
+       "nombre": "Leche con chocolate caliente",
+       "precio": 66
+      },
+      {
+       "nombre": "Café con leche caliente",
+       "precio": 66
+      },
+      {
+       "nombre": "Chocolate Abuelita espumoso",
+       "precio": 69
+      },
+      {
+       "nombre": "Capuchino (Moka, Cajeta y Fresa)",
+       "precio": 69
+      },
+      {
+       "nombre": "Capuchino (Rompope, Amaretto, Kahlúa y Baileys)",
+       "precio": 96
+      }
+     ]
+    },
+    {
+     "nombre": "Bebidas frías",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Café capuchino frío",
+       "precio": 66
+      },
+      {
+       "nombre": "Leche con chocolate",
+       "precio": 66
+      }
+     ]
+    },
+    {
+     "nombre": "Frappés",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Frappé con licor (Amaretto, Kahlúa, Baileys, Piña colada y Rompope)",
+       "precio": 109
+      },
+      {
+       "nombre": "Frappé (Fresa, Capuchino, Cajeta, Mazapán, 3 Leches, Oreo y Moka)",
+       "precio": 89
+      }
+     ]
+    },
+    {
+     "nombre": "Licuados",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Plátano",
+       "precio": 45
+      },
+      {
+       "nombre": "Fresa",
+       "precio": 45
+      },
+      {
+       "nombre": "Guayaba",
+       "precio": 45
+      },
+      {
+       "nombre": "Guayaba / plátano / chocolate",
+       "precio": 55
+      },
+      {
+       "nombre": "Plátano / fresa",
+       "precio": 55
+      },
+      {
+       "nombre": "Choco fresa",
+       "precio": 55
+      },
+      {
+       "nombre": "Choco banana",
+       "precio": 55
+      }
+     ]
+    },
+    {
+     "nombre": "Chamoyadas",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Chamoyada (Mango, Fresa, Guanábana, Tamarindo, Limón, Frutos Rojos)",
+       "precio": 86
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

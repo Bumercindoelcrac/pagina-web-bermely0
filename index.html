@@ -1,0 +1,2022 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ber-Mely · Restaurante Café · Tláhuac</title>
+<meta name="description" content="Ber-Mely Restaurante Café en San Francisco Tlaltenco, Tláhuac. Desayunos, menú del día, crepas, cafetería, cortes y mariscos. Sabor de casa.">
+<meta name="theme-color" content="#111111">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   BER-MELY · Diseño editorial
+   Paleta: negro · café · amarillo · blanco
+   ============================================================ */
+:root{
+  --black:#111111; --black-2:#1a1917; --ink:#232220;
+  --cafe:#4a3324; --cafe-2:#6b4a35; --cafe-3:#8c6a52;
+  --yellow:#f2c230; --yellow-2:#ffd54a;
+  --white:#ffffff; --paper:#f7f3ec; --paper-2:#efe8dc; --line:rgba(17,17,17,.12); --line-l:rgba(255,255,255,.14);
+  --muted:#7a7169; --muted-l:rgba(255,255,255,.62);
+  --serif:'Playfair Display',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1); --ease-2:cubic-bezier(.65,0,.35,1);
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--black);line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+iconify-icon{vertical-align:-.15em;display:inline-block}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+.section{padding:clamp(4.5rem,10vw,8rem) 0}
+.section-dark{background:var(--black);color:var(--white)}
+.section-light{background:var(--paper);color:var(--ink)}
+.section-cafe{background:var(--cafe);color:var(--white)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+@media(max-width:880px){.grid-2{grid-template-columns:1fr}}
+.center{text-align:center}.muted{color:var(--muted)}.section-dark .muted{color:var(--muted-l)}.small{font-size:.82rem}
+.label{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--yellow);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem}
+.label::before{content:'';width:22px;height:1px;background:currentColor}
+.section-light .label{color:var(--cafe-2)}
+.h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.08;letter-spacing:-.01em;margin-bottom:1.2rem}
+.h2 em{font-style:italic;color:var(--yellow)}
+.section-light .h2 em{color:var(--cafe-2)}
+.lead{font-size:1.08rem;max-width:56ch;color:inherit;opacity:.85}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3.5rem)}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.95rem 1.5rem;border-radius:999px;font-weight:500;font-size:.92rem;letter-spacing:.01em;transition:transform .5s var(--ease),background .3s,color .3s,box-shadow .3s;position:relative;overflow:hidden;white-space:nowrap}
+.btn iconify-icon{transition:transform .5s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover iconify-icon{transform:translateX(3px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-yellow{background:var(--yellow);color:var(--black)}
+.btn-yellow:hover{background:var(--yellow-2);box-shadow:0 10px 30px rgba(242,194,48,.25)}
+.btn-dark{background:var(--black);color:var(--white)}
+.btn-dark:hover{background:var(--cafe)}
+.btn-ghost{border:1px solid rgba(255,255,255,.45);color:var(--white);backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--white)}
+.btn.full{width:100%;justify-content:center}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+.icon-btn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;border:1px solid var(--line);transition:.3s}
+.icon-btn:hover{background:var(--black);color:var(--white);border-color:var(--black)}
+
+/* ---------- loader / progress ---------- */
+.loader{position:fixed;inset:0;background:var(--black);z-index:200;display:grid;place-items:center;transition:opacity .6s var(--ease-2),visibility .6s}
+.loader img{width:96px;height:96px;border-radius:50%;animation:loaderPulse 1.4s ease-in-out infinite}
+.loader-bar{position:absolute;left:50%;bottom:20%;width:120px;height:2px;background:rgba(255,255,255,.12);transform:translateX(-50%);overflow:hidden}
+.loader-bar::after{content:'';position:absolute;left:-40%;width:40%;height:100%;background:var(--yellow);animation:loaderBar 1.1s var(--ease-2) infinite}
+.loader.done{opacity:0;visibility:hidden}
+@keyframes loaderPulse{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.06);opacity:1}}
+@keyframes loaderBar{to{left:100%}}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--yellow);z-index:120;transition:width .12s linear}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem clamp(1.1rem,4vw,2.5rem);padding-top:max(.9rem,env(safe-area-inset-top));color:var(--white);transition:background .4s,padding .4s,box-shadow .4s}
+.nav.scrolled{background:rgba(17,17,17,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-top:.6rem;padding-bottom:.6rem;box-shadow:0 1px 0 var(--line-l)}
+.nav.hidden{transform:translateY(-100%)}
+.nav{transition:transform .45s var(--ease),background .4s,padding .4s}
+.brand{display:flex;align-items:center;gap:.7rem;font-family:var(--serif);font-size:1.25rem;font-weight:600;letter-spacing:.01em}
+.brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.2)}
+.nav-links{display:flex;align-items:center;gap:1.8rem}
+.nav-links a{font-size:.88rem;font-weight:400;color:rgba(255,255,255,.8);position:relative;padding:.3rem 0;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--yellow);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-links .nav-wa{border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:.5rem 1rem;color:var(--white)}
+.nav-links .nav-wa::after{display:none}
+.nav-links .nav-wa:hover{background:var(--yellow);color:var(--black);border-color:var(--yellow)}
+.nav-actions{display:flex;align-items:center;gap:.6rem}
+.cart-btn{display:flex;align-items:center;gap:.45rem;padding:.5rem .9rem;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);font-size:1.15rem;transition:.3s}
+.cart-btn:hover{background:var(--yellow);color:var(--black);border-color:var(--yellow)}
+.cart-count{font-size:.78rem;font-weight:600;font-family:var(--sans)}
+.cart-btn.bump{animation:bump .5s var(--ease)}
+@keyframes bump{30%{transform:scale(1.15)}}
+.burger{display:none;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.25);position:relative}
+.burger span{position:absolute;left:12px;right:12px;height:1.5px;background:var(--white);transition:.4s var(--ease)}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:24px}
+.burger.open span:nth-child(1){top:20px;transform:rotate(45deg)}.burger.open span:nth-child(2){top:20px;transform:rotate(-45deg)}
+@media(max-width:880px){
+  .burger{display:block}
+  .nav-links{position:fixed;inset:0;background:var(--black);flex-direction:column;justify-content:center;align-items:flex-start;padding:6rem clamp(1.5rem,8vw,4rem);gap:1.2rem;clip-path:circle(0 at calc(100% - 40px) 40px);transition:clip-path .7s var(--ease);z-index:-1}
+  .nav-links.open{clip-path:circle(150% at calc(100% - 40px) 40px)}
+  .nav-links a{font-family:var(--serif);font-size:2rem;font-weight:500;color:var(--white);opacity:0;transform:translateY(20px);transition:opacity .5s,transform .6s var(--ease)}
+  .nav-links.open a{opacity:1;transform:none}
+  .nav-links.open a:nth-child(1){transition-delay:.15s}.nav-links.open a:nth-child(2){transition-delay:.2s}.nav-links.open a:nth-child(3){transition-delay:.25s}.nav-links.open a:nth-child(4){transition-delay:.3s}.nav-links.open a:nth-child(5){transition-delay:.35s}.nav-links.open a:nth-child(6){transition-delay:.4s}
+  .nav-links .nav-wa{font-family:var(--sans);font-size:1rem;margin-top:1rem;background:var(--yellow);color:var(--black);border-color:var(--yellow)}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--white);overflow:hidden;padding:0 clamp(1.1rem,4vw,2.5rem) 0}
+.hero-media{position:absolute;inset:0;overflow:hidden}
+.hero-bg{width:100%;height:115%;object-fit:cover;filter:brightness(.55) saturate(.9);transform:scale(1.06);animation:heroIn 2.4s var(--ease) both;will-change:transform}
+@keyframes heroIn{from{transform:scale(1.18);filter:brightness(.2) saturate(.5)}to{transform:scale(1.06);filter:brightness(.55) saturate(.9)}}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,17,.55) 0%,rgba(17,17,17,.1) 35%,rgba(17,17,17,.75) 100%)}
+.hero-inner{position:relative;z-index:1;max-width:1240px;width:100%;margin:0 auto;padding-top:9rem;padding-bottom:3rem}
+.eyebrow{display:flex;align-items:center;gap:.8rem;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:1.6rem;overflow:hidden}
+.eyebrow span{display:inline-block;animation:rise 1s var(--ease) .6s both}
+.eyebrow .dot{width:4px;height:4px;border-radius:50%;background:var(--yellow)}
+.hero-title{font-family:var(--serif);font-weight:500;font-size:clamp(2.9rem,9vw,7.2rem);line-height:.98;letter-spacing:-.02em;margin-bottom:1.6rem;max-width:12ch}
+.hero-title .word{display:inline-block;overflow:hidden;vertical-align:bottom}
+.hero-title .word{animation:none;opacity:0;transform:translateY(110%);animation:wordUp 1.2s var(--ease) both}
+.hero-title .word:nth-child(1){animation-delay:.7s}.hero-title .word:nth-child(2){animation-delay:.78s}.hero-title .word:nth-child(3){animation-delay:.86s}.hero-title .word:nth-child(5){animation-delay:.94s}.hero-title .word:nth-child(6){animation-delay:1.02s}.hero-title .word:nth-child(7){animation-delay:1.1s}
+.hero-title .em{font-style:italic;color:var(--yellow)}
+@keyframes wordUp{to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(100%)}to{opacity:1;transform:none}}
+.hero-sub{max-width:44ch;font-size:clamp(1rem,1.5vw,1.2rem);color:rgba(255,255,255,.82);margin-bottom:2rem;animation:fadeUp 1.2s var(--ease) 1.3s both}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;animation:fadeUp 1.2s var(--ease) 1.5s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero-foot{position:relative;z-index:1;max-width:1240px;width:100%;margin:0 auto;display:flex;align-items:center;gap:1.6rem;padding:1.4rem 0 max(1.6rem,env(safe-area-inset-bottom));border-top:1px solid rgba(255,255,255,.18);font-size:.85rem;color:rgba(255,255,255,.8);animation:fadeUp 1.2s var(--ease) 1.8s both;flex-wrap:wrap}
+.hero-rating iconify-icon{color:var(--yellow)}
+.status::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:.5rem;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.6);animation:ping 2s infinite}
+.status.closed::before{background:#e05252;box-shadow:0 0 0 0 rgba(224,82,82,.6)}
+@keyframes ping{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.scroll-cue{margin-left:auto;width:26px;height:42px;border:1px solid rgba(255,255,255,.4);border-radius:999px;position:relative}
+.scroll-cue span{position:absolute;left:50%;top:8px;width:3px;height:8px;margin-left:-1.5px;border-radius:2px;background:var(--yellow);animation:cue 1.8s var(--ease) infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(16px)}}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--yellow);color:var(--black);overflow:hidden;padding:.85rem 0;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+.marquee-track{display:flex;gap:2.5rem;width:max-content;animation:marquee 32s linear infinite}
+.marquee-track i{width:6px;height:6px;border-radius:50%;background:var(--black);align-self:center;opacity:.6}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ---------- menú del día promo ---------- */
+.md-media{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;max-height:640px}
+.md-media img{width:100%;height:112%;object-fit:cover;will-change:transform}
+.md-stamp{position:absolute;right:1.2rem;bottom:1.2rem;width:110px;height:110px;border-radius:50%;background:var(--yellow);color:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;animation:spinSlow 18s linear infinite paused;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.md-stamp strong{font-family:var(--serif);font-size:2.6rem;font-weight:600}
+.md-stamp small{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+.steps{list-style:none;margin:1.8rem 0 1.4rem;border-top:1px solid var(--line)}
+.steps li{display:flex;gap:1.2rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid var(--line);transition:padding .4s var(--ease)}
+.steps li:hover{padding-left:.6rem}
+.steps li span{font-family:var(--serif);font-size:1.1rem;color:var(--cafe-3);min-width:2rem;padding-top:.1rem}
+.steps li strong{display:block;font-weight:500;font-size:1.05rem}
+.steps li p{font-size:.9rem;color:var(--muted)}
+.note{font-size:.9rem;color:var(--muted);margin-bottom:1.6rem}
+
+/* ---------- modal ---------- */
+.modal-bg{position:fixed;inset:0;background:rgba(17,17,17,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .45s;z-index:140}
+.modal-bg.open{opacity:1;pointer-events:auto}
+.modal{position:fixed;left:50%;top:50%;width:min(600px,94vw);max-height:88vh;background:var(--paper);color:var(--ink);border-radius:20px;z-index:150;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.45);transform:translate(-50%,-46%) scale(.96);opacity:0;pointer-events:none;transition:transform .6s var(--ease),opacity .4s}
+.modal.open{transform:translate(-50%,-50%) scale(1);opacity:1;pointer-events:auto}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 1.6rem 1rem;border-bottom:1px solid var(--line)}
+.modal-head .label{margin-bottom:.3rem}
+.modal-head h3{font-family:var(--serif);font-size:1.7rem;font-weight:500;line-height:1}
+.modal-body{overflow-y:auto;padding:1.2rem 1.6rem 0;display:flex;flex-direction:column;overscroll-behavior:contain}
+@media(max-width:600px){
+  .modal{top:auto;bottom:0;left:0;width:100vw;max-height:92dvh;border-radius:22px 22px 0 0;transform:translateY(100%);}
+  .modal.open{transform:none}
+  .modal-body{padding:1rem 1.1rem 0}
+  .modal-head{padding:1.2rem 1.1rem .9rem}
+}
+.tiempo{padding:1.1rem 0 .4rem;border-bottom:1px solid var(--line);opacity:0;transform:translateY(14px);animation:fadeUp .7s var(--ease) both}
+.tiempo:nth-child(1){animation-delay:.1s}.tiempo:nth-child(2){animation-delay:.2s}.tiempo:nth-child(3){animation-delay:.3s}
+.tiempo h4{display:flex;align-items:baseline;gap:.8rem;font-weight:500;font-size:1rem;margin-bottom:.4rem}
+.tiempo h4 .num{font-family:var(--serif);color:var(--cafe-3);font-size:1.05rem}
+.tiempo h4 .tag{margin-left:auto;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--muted)}
+.tiempo h4 .tag.pay{color:var(--cafe-2)}
+.opcion{display:flex;align-items:center;gap:.9rem;padding:.7rem .6rem;margin:0 -.6rem;border-radius:10px;cursor:pointer;transition:background .3s;user-select:none}
+.opcion:hover{background:rgba(17,17,17,.04)}
+.opcion .radio{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--cafe-3);flex:0 0 auto;display:grid;place-items:center;transition:.3s}
+.opcion .radio::after{content:'';width:10px;height:10px;border-radius:50%;background:var(--black);transform:scale(0);transition:transform .4s var(--ease)}
+.opcion.sel .radio{border-color:var(--black)}
+.opcion.sel .radio::after{transform:scale(1)}
+.opcion.sel .op-name{font-weight:500}
+.op-name{flex:1;font-size:1.02rem}
+.op-price{font-family:var(--serif);font-size:1.05rem;color:var(--cafe-2)}
+.op-inc{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.dia-foot{position:sticky;bottom:0;background:var(--paper);padding:1rem 0 1.1rem;margin-top:.4rem;border-top:1px solid var(--line)}
+.dia-sum{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:.8rem}
+.dia-msg{font-size:.88rem;color:var(--muted)}
+.dia-msg.ok{color:var(--ink)}
+.dia-price{font-family:var(--serif);font-size:1.7rem;font-weight:500}
+.dia-extra{font-size:.85rem;color:var(--muted);padding:1rem 0 .4rem}
+@media(max-width:600px){.dia-foot{padding-bottom:calc(1rem + env(safe-area-inset-bottom))}}
+
+/* ---------- carta ---------- */
+.search{display:flex;align-items:center;gap:.6rem;border:1px solid var(--line-l);border-radius:999px;padding:.7rem 1.1rem;min-width:min(320px,100%);color:var(--muted-l);transition:border-color .3s}
+.search:focus-within{border-color:var(--yellow);color:var(--white)}
+.search input{flex:1;background:none;border:0;outline:0;color:var(--white);font:inherit;font-size:.95rem;min-width:0}
+.search input::placeholder{color:var(--muted-l)}
+.tabs-wrap{position:sticky;top:64px;z-index:20;margin:0 calc(-1 * clamp(1.1rem,4vw,2.5rem));padding:.6rem clamp(1.1rem,4vw,2.5rem);background:rgba(17,17,17,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.tabs{display:flex;gap:.4rem;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;padding:.6rem 1.1rem;border-radius:999px;border:1px solid var(--line-l);color:var(--muted-l);font-size:.88rem;display:flex;align-items:center;gap:.45rem;transition:.3s;white-space:nowrap}
+.tab iconify-icon{font-size:1.1rem}
+.tab:hover{color:var(--white);border-color:rgba(255,255,255,.4)}
+.tab.active{background:var(--yellow);color:var(--black);border-color:var(--yellow);font-weight:500}
+.panel{display:none}
+.panel.active{display:block;animation:fadeUp .7s var(--ease)}
+.panel-hero{position:relative;height:clamp(200px,32vw,380px);border-radius:var(--r);overflow:hidden;margin:1.8rem 0 2.6rem}
+.panel-hero img{width:100%;height:115%;object-fit:cover;transform:scale(1.04);transition:transform 1.6s var(--ease)}
+.panel.active .panel-hero img{transform:scale(1)}
+.panel-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(17,17,17,.8),transparent 60%)}
+.panel-hero h3{position:absolute;left:1.6rem;bottom:1.4rem;z-index:1;font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,3.5vw,2.6rem);color:var(--white)}
+.sub-block{margin-bottom:2.8rem}
+.sub-block h4{display:flex;align-items:center;gap:.7rem;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--yellow);padding-bottom:.7rem;border-bottom:1px solid var(--line-l);margin-bottom:.4rem}
+.sub-block h4 iconify-icon{font-size:1.15rem}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));column-gap:3rem}
+.item{display:flex;align-items:baseline;gap:.7rem;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.08);cursor:pointer;opacity:0;transform:translateY(10px);animation:fadeUp .6s var(--ease) both}
+.item-name{flex:0 1 auto;font-size:.98rem;color:rgba(255,255,255,.9);transition:color .3s}
+.item-dots{flex:1;border-bottom:1px dotted rgba(255,255,255,.22);transform:translateY(-4px);min-width:16px}
+.item-price{font-family:var(--serif);font-size:1.05rem;color:var(--white);white-space:nowrap}
+.item-add{width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;font-size:1.05rem;transition:.35s var(--ease);align-self:center;flex:0 0 auto}
+.item:hover .item-name{color:var(--yellow)}
+.item:hover .item-add{background:var(--yellow);color:var(--black);border-color:var(--yellow);transform:rotate(90deg)}
+.no-results{padding:3rem 0;color:var(--muted-l)}
+
+/* ---------- stats ---------- */
+.stats{padding:clamp(2.5rem,6vw,4rem) 0;border-top:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+@media(max-width:700px){.stats-grid{grid-template-columns:1fr 1fr}}
+.stats-grid div{border-left:1px solid var(--line);padding-left:1.2rem}
+.stats-grid strong{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1;color:var(--cafe)}
+.stats-grid span{font-size:.85rem;color:var(--muted)}
+
+/* ---------- gallery ---------- */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:.8rem}
+.gallery figure{position:relative;overflow:hidden;border-radius:var(--r);background:var(--black-2)}
+.gallery .g-big{grid-column:span 2;grid-row:span 2}
+.gallery .g-wide{grid-column:span 2}
+.gallery img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.4s var(--ease),filter .6s}
+.gallery figure:hover img{transform:scale(1.08);filter:brightness(.8)}
+.gallery figcaption{position:absolute;left:1rem;bottom:.9rem;font-size:.85rem;color:var(--white);opacity:0;transform:translateY(8px);transition:.5s var(--ease)}
+.gallery figure:hover figcaption{opacity:1;transform:none}
+@media(max-width:880px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.gallery .g-big{grid-column:span 2;grid-row:span 2}}
+
+/* ---------- about ---------- */
+.section-cafe .label{color:var(--yellow)}
+.section-cafe .h2 em{color:var(--yellow)}
+.pills{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem}
+.pills li{border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:.45rem 1rem;font-size:.85rem}
+.about-img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;max-height:600px}
+.about-img img{width:100%;height:112%;object-fit:cover}
+
+/* ---------- maps / hours ---------- */
+.maps{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:2.4rem}
+@media(max-width:880px){.maps{grid-template-columns:1fr}}
+.map{border-radius:var(--r);overflow:hidden;background:var(--white);box-shadow:0 1px 0 var(--line)}
+.map iframe{width:100%;height:320px;border:0;display:block;filter:grayscale(.35) contrast(1.05)}
+.map-cap{padding:1.1rem 1.3rem;font-size:.9rem;color:var(--muted);line-height:1.5}
+.map-cap strong{display:block;color:var(--ink);font-weight:500;margin-bottom:.2rem}
+.hours{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+@media(max-width:700px){.hours{grid-template-columns:1fr 1fr}}
+.hours div{padding:1.1rem 1.2rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:.2rem;transition:background .3s}
+.hours div:hover{background:var(--white)}
+.hours span{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.hours strong{font-family:var(--serif);font-weight:500;font-size:1.2rem}
+.section-light .small{margin-top:1rem}
+
+/* ---------- contact ---------- */
+.contact{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.8rem}
+.contact a{display:flex;align-items:center;gap:1rem;padding:1.3rem 1.4rem;border:1px solid var(--line-l);border-radius:var(--r);transition:.5s var(--ease);position:relative;overflow:hidden}
+.contact a::before{content:'';position:absolute;inset:0;background:var(--yellow);transform:translateY(101%);transition:transform .55s var(--ease);z-index:0}
+.contact a>*{position:relative;z-index:1;transition:color .3s}
+.contact a>iconify-icon:first-child{font-size:1.8rem}
+.contact a div{flex:1}
+.contact a strong{display:block;font-weight:500}
+.contact a span{font-size:.85rem;color:var(--muted-l)}
+.contact .arr{font-size:1.1rem;opacity:.5;transition:.4s var(--ease)}
+.contact a:hover::before{transform:none}
+.contact a:hover>*{color:var(--black)}
+.contact a:hover span{color:rgba(17,17,17,.7)}
+.contact a:hover .arr{opacity:1;transform:translate(3px,-3px)}
+
+/* ---------- footer ---------- */
+.footer{background:var(--black);color:var(--muted-l);border-top:1px solid var(--line-l);padding:3.5rem 0 7rem}
+.footer-in{text-align:center;max-width:640px}
+.footer img{margin:0 auto 1.2rem;border-radius:50%}
+.footer p{font-size:.95rem;margin-bottom:.8rem;font-style:italic}
+.footer .small{font-style:normal}
+
+/* ---------- whatsapp ---------- */
+.wa-float{position:fixed;right:1.2rem;bottom:calc(1.2rem + env(safe-area-inset-bottom));width:56px;height:56px;border-radius:50%;background:#25d366;color:var(--white);display:grid;place-items:center;font-size:1.8rem;z-index:90;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .4s var(--ease)}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:ring 2.4s var(--ease) infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ---------- cart ---------- */
+.cart-overlay{position:fixed;inset:0;background:rgba(17,17,17,.55);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:.4s;z-index:140}
+.cart-overlay.open{opacity:1;pointer-events:auto}
+.cart{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--paper);color:var(--ink);z-index:150;transform:translateX(100%);transition:transform .6s var(--ease);display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.35)}
+.cart.open{transform:none}
+.cart-head{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 1.5rem 1rem;padding-top:max(1.4rem,env(safe-area-inset-top));border-bottom:1px solid var(--line)}
+.cart-head .label{margin-bottom:.2rem}
+.cart-head h3{font-family:var(--serif);font-weight:500;font-size:1.6rem;line-height:1}
+.cart-items{flex:1;overflow-y:auto;padding:.6rem 1.5rem}
+.cart-empty{padding:3rem 0;text-align:center;color:var(--muted);font-size:.95rem}
+.c-item{display:flex;align-items:center;gap:.8rem;padding:.9rem 0;border-bottom:1px solid var(--line);animation:fadeUp .5s var(--ease)}
+.c-name{flex:1;font-size:.93rem;line-height:1.35}
+.c-name small{display:block;color:var(--muted);font-size:.78rem;margin-top:.15rem}
+.qty{display:flex;align-items:center;gap:.2rem;border:1px solid var(--line);border-radius:999px;padding:.15rem}
+.qty button{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:1rem;transition:.3s}
+.qty button:hover{background:var(--black);color:var(--white)}
+.qty span{min-width:1.4rem;text-align:center;font-weight:500;font-size:.9rem}
+.c-sub{font-family:var(--serif);min-width:64px;text-align:right}
+.cart-foot{padding:1rem 1.5rem calc(1.2rem + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--paper-2)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.field{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+.field input,.field select,.field textarea{width:100%;display:block;margin-top:.3rem;padding:.7rem .8rem;border:1px solid var(--line);border-radius:10px;background:var(--white);font:inherit;font-size:.95rem;color:var(--ink);transition:border-color .3s;outline:0}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--black)}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin:.6rem 0 .9rem}
+.total span{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.total strong{font-family:var(--serif);font-size:1.7rem;font-weight:500}
+.link-btn{width:100%;margin-top:.6rem;font-size:.82rem;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.link-btn:hover{color:var(--ink)}
+
+/* ---------- toast ---------- */
+.toast{position:fixed;left:50%;bottom:calc(6rem + env(safe-area-inset-bottom));transform:translate(-50%,16px);background:var(--black);color:var(--white);border:1px solid var(--line-l);padding:.75rem 1.2rem;border-radius:999px;font-size:.9rem;opacity:0;transition:.4s var(--ease);z-index:160;pointer-events:none;white-space:nowrap;max-width:92vw;overflow:hidden;text-overflow:ellipsis}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- scroll reveal ---------- */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal-line{overflow:hidden}
+
+/* ---------- misc ---------- */
+::selection{background:var(--yellow);color:var(--black)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal,.item,.tiempo,.hero-title .word{opacity:1;transform:none}}
+
+/* leyenda empaque */
+.notice{display:flex;gap:.9rem;align-items:flex-start;border:1px solid var(--line-l);border-left:3px solid var(--yellow);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.4rem;background:rgba(255,255,255,.03)}
+.notice iconify-icon{font-size:1.5rem;color:var(--yellow);flex:0 0 auto;margin-top:.1rem}
+.notice p{font-size:.9rem;color:var(--muted-l);line-height:1.5}
+.notice strong{color:var(--white);font-weight:500}
+/* desglose carrito */
+.sub-rows{display:flex;flex-direction:column;gap:.3rem;margin-top:.6rem;padding-top:.6rem;border-top:1px dashed var(--line)}
+.sub-rows div{display:flex;justify-content:space-between;font-size:.86rem;color:var(--muted)}
+.sub-rows div strong{font-weight:500;color:var(--ink)}
+.sub-rows .hint{font-size:.76rem;color:var(--muted);font-style:italic}
+.c-name .fee{color:var(--cafe-2)}
+
+/* ubicación en dos partes */
+.loc-part{margin-bottom:clamp(2.5rem,6vw,4.5rem)}
+.part-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.4rem;padding-bottom:.8rem;border-bottom:1px solid var(--line)}
+.part-num{font-family:var(--serif);font-size:1.6rem;color:var(--cafe-3)}
+.part-head h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.3rem,2.4vw,1.8rem)}
+.loc-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:1.2rem}
+@media(max-width:880px){.loc-grid{grid-template-columns:1fr}}
+.loc-card{background:var(--white);border-radius:var(--r);padding:1.6rem;box-shadow:0 1px 0 var(--line)}
+.loc-addr{font-family:var(--serif);font-size:1.25rem;line-height:1.45}
+.refs{list-style:none;color:var(--muted);font-size:.92rem}
+.refs li{padding:.45rem 0 .45rem 1.3rem;position:relative;border-bottom:1px solid var(--line)}
+.refs li:last-child{border:0}
+.refs li::before{content:'';position:absolute;left:0;top:1rem;width:6px;height:6px;border-radius:50%;background:var(--yellow)}
+.loc-card .hours{border-top:0;border-left:0}
+.loc-card .hours div{border:0;border-bottom:1px solid var(--line);padding:.8rem 0}
+.dist-bar{display:flex;align-items:center;gap:1.1rem;background:var(--black);color:var(--white);border-radius:var(--r);padding:1.1rem 1.3rem;margin-bottom:1rem;flex-wrap:wrap;transition:background .5s}
+.dist-bar.ok{background:var(--cafe)}
+.dist-ico{width:46px;height:46px;border-radius:50%;background:var(--yellow);color:var(--black);display:grid;place-items:center;font-size:1.4rem;flex:0 0 auto}
+.dist-bar.loading .dist-ico iconify-icon{animation:spin 1.2s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.dist-txt{flex:1;min-width:200px;display:flex;flex-direction:column;gap:.1rem}
+.dist-txt strong{font-family:var(--serif);font-weight:500;font-size:1.15rem}
+.dist-txt span{font-size:.82rem;color:var(--muted-l)}
+.dist-bar .btn{white-space:nowrap}
+.dist-bar.ok .btn{background:rgba(255,255,255,.12)}
+.big-map iframe{height:440px}
+.map-cap-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.map-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+.btn-ghost-dark{border:1px solid var(--line);color:var(--ink)}
+.btn-ghost-dark:hover{background:var(--black);color:var(--white);border-color:var(--black)}
+@media(max-width:600px){.big-map iframe{height:320px}.dist-bar .btn{width:100%;justify-content:center}.map-actions{width:100%}.map-actions .btn{flex:1;justify-content:center}}
+.map-actions .btn{white-space:normal;text-align:center}
+@media(max-width:600px){.map-actions{flex-direction:column}.map-actions .btn{width:100%}}
+
+/* ubicación en fondo oscuro */
+.section-dark .part-head{border-color:var(--line-l)}
+.section-dark .part-head h3{color:var(--white)}
+.section-dark .loc-card{background:var(--black-2);color:var(--white);box-shadow:0 0 0 1px var(--line-l)}
+.section-dark .loc-card .label{color:var(--yellow)}
+.section-dark .refs{color:var(--muted-l)}
+.section-dark .refs li{border-color:var(--line-l)}
+.section-dark .loc-card .hours div{border-color:var(--line-l)}
+.section-dark .hours span{color:var(--muted-l)}
+.section-dark .hours div:hover{background:transparent}
+.loc-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;font-size:.85rem;color:var(--yellow);border-bottom:1px solid transparent;transition:.3s}
+.loc-link:hover{border-color:var(--yellow)}
+.section-dark .dist-bar{background:var(--black-2);box-shadow:0 0 0 1px var(--line-l)}
+.section-dark .dist-bar.ok{background:var(--cafe)}
+.tabs-wrap::after{content:'';position:absolute;right:0;top:0;bottom:0;width:48px;background:linear-gradient(90deg,transparent,rgba(17,17,17,.9));pointer-events:none}
+.tabs-wrap{position:sticky}
+
+.hours-3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 2rem}
+@media(max-width:700px){.hours-3{grid-template-columns:1fr 1fr;gap:0 1rem}}
+.section-dark .dist-bar .btn-yellow{background:var(--yellow);color:var(--black)}
+.hours-3 strong{white-space:nowrap;font-size:1.05rem}
+@media(max-width:700px){.hours-3{grid-template-columns:1fr}.hours-3 div{flex-direction:row;justify-content:space-between;align-items:baseline}}
+
+</style>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+<body>
+
+<div class="loader" id="loader"><img src="images/logo.png" alt=""><span class="loader-bar"></span></div>
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#inicio" class="brand"><img src="images/logo.png" alt="Ber-Mely" width="40" height="40"><span>Ber-Mely</span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#menu-dia">Menú del día</a>
+    <a href="#carta">Carta</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/525537317794?text=Hola%20Ber-Mely%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" class="nav-wa">Pedir por WhatsApp</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="cart-btn" id="cartBtn" aria-label="Carrito"><iconify-icon icon="ph:basket"></iconify-icon><span class="cart-count" id="cartCount">0</span></button>
+    <button class="burger" id="burger" aria-label="Menú" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-media"><img src="images/hero.jpg" alt="" class="hero-bg" data-parallax></div>
+  <div class="hero-inner">
+    <p class="eyebrow reveal-line"><span>Restaurante · Café</span><span class="dot"></span><span>San Francisco Tlaltenco</span></p>
+    <h1 class="hero-title"><span class="word">Sabor</span> <span class="word">de</span> <span class="word em">casa,</span><br><span class="word">todos</span> <span class="word">los</span> <span class="word">días.</span></h1>
+    <p class="hero-sub">Desayunos, comida corrida a tres tiempos, cortes, crepas y café de la mañana a la noche.</p>
+    <div class="hero-cta">
+      <a href="#carta" class="btn btn-yellow">Ver la carta <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+      <a href="#menu-dia" class="btn btn-ghost">Menú del día</a>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <span class="status" id="openStatus"></span>
+    <span class="hero-rating"><iconify-icon icon="ph:star-fill"></iconify-icon> 4.8 en Uber Eats</span>
+    <a href="#menu-dia" class="scroll-cue" aria-label="Bajar"><span></span></a>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Abierto todos los días desde 8:30 am</span><i></i><span>Desayunos 8:30 – 12:30</span><i></i><span>Menú del día L–V 12:30 – 17:00</span><i></i><span>Crepas & frappés</span><i></i><span>Cortes a la parrilla</span><i></i><span>Mariscos</span><i></i><span>Uber Eats · Rappi</span><i></i>
+    <span>Abierto todos los días desde 8:30 am</span><i></i><span>Desayunos 8:30 – 12:30</span><i></i><span>Menú del día L–V 12:30 – 17:00</span><i></i><span>Crepas & frappés</span><i></i><span>Cortes a la parrilla</span><i></i><span>Mariscos</span><i></i><span>Uber Eats · Rappi</span><i></i>
+  </div>
+</div>
+
+<!-- UBICACIÓN -->
+<section class="section section-dark" id="ubicacion">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><p class="label">Ubicación</p><h2 class="h2">Estamos en el pueblo de <em>San Francisco Tlaltenco.</em></h2></div></div>
+
+    <!-- Parte 1: mapa y distancia -->
+    <div class="loc-part reveal">
+      <div class="part-head"><span class="part-num">01</span><h3>Cómo llegar desde donde estás</h3></div>
+      <div class="dist-bar" id="distBar">
+        <div class="dist-ico"><iconify-icon icon="ph:navigation-arrow"></iconify-icon></div>
+        <div class="dist-txt">
+          <strong id="distMain">Activa tu ubicación para calcular la distancia</strong>
+          <span id="distSub">Solo se usa en tu navegador para medir qué tan lejos estás. No se guarda.</span>
+        </div>
+        <button class="btn btn-yellow" id="geoBtn"><iconify-icon icon="ph:crosshair"></iconify-icon> Usar mi ubicación</button>
+      </div>
+      <div class="map big-map">
+        <iframe id="mapFrame" title="Mapa Ber-Mely" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src=""></iframe>
+        <div class="map-cap map-cap-row">
+          <div><strong>Café Ber-Mely</strong>San Rafael Atlixco, San Francisco Tlaltenco, Tláhuac, 13440 Ciudad de México, CDMX</div>
+          <div class="map-actions">
+            <a class="btn btn-yellow" id="dirLink" target="_blank" rel="noopener" href="#">Ruta en Google Maps <iconify-icon icon="ph:arrow-up-right"></iconify-icon></a>
+            <a class="btn btn-ghost-dark" id="wazeLink" target="_blank" rel="noopener" href="#"><iconify-icon icon="simple-icons:waze"></iconify-icon> Waze</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Parte 2: horarios -->
+    <div class="loc-part reveal">
+      <div class="part-head"><span class="part-num">02</span><h3>Horarios</h3></div>
+      <div class="loc-card">
+        <div class="hours hours-3">
+          <div><span>Lunes</span><strong>8:30 am – 8:30 pm</strong></div>
+          <div><span>Martes</span><strong>8:30 am – 5:30 pm</strong></div>
+          <div><span>Miércoles</span><strong>8:30 am – 5:30 pm</strong></div>
+          <div><span>Jueves</span><strong>8:30 am – 8:30 pm</strong></div>
+          <div><span>Viernes</span><strong>8:30 am – 8:30 pm</strong></div>
+          <div><span>Sábado</span><strong>8:30 am – 8:30 pm</strong></div>
+          <div><span>Domingo</span><strong>9:30 am – 8:30 pm</strong></div>
+          <div><span>Desayunos</span><strong>8:30 – 12:30</strong></div>
+          <div><span>Menú del día (L–V)</span><strong>12:30 – 17:00</strong></div>
+        </div>
+        <p class="muted small">Los horarios de cierre pueden variar; publicamos cambios diarios en redes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENÚ DEL DÍA -->
+<section class="section section-light" id="menu-dia">
+  <div class="wrap grid-2 reveal">
+    <div class="md-media">
+      <img src="images/menu-dia.jpg" alt="Menú del día" data-parallax="0.08">
+      <div class="md-stamp"><strong>3</strong><small>tiempos</small></div>
+    </div>
+    <div class="md-copy">
+      <p class="label">Menú del día</p>
+      <h2 class="h2">Comida corrida, <em>como en casa.</em></h2>
+      <p class="lead" id="diaHorario">Lunes a viernes · 12:30 PM a 5:00 PM</p>
+      <ol class="steps">
+        <li><span>01</span><div><strong>Sopa</strong><p>Elige una. Incluida.</p></div></li>
+        <li><span>02</span><div><strong>Arroz o pasta</strong><p>Elige una. Incluida.</p></div></li>
+        <li><span>03</span><div><strong>Guisado</strong><p>Elige tu plato fuerte. Es lo único que pagas.</p></div></li>
+      </ol>
+      <p class="note">Incluye agua del día.</p>
+      <button class="btn btn-dark" id="openDia">Ver menú de hoy <iconify-icon icon="ph:arrow-up-right"></iconify-icon></button>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL MENÚ DEL DÍA -->
+<div class="modal-bg" id="diaModalBg"></div>
+<div class="modal" id="diaModal" role="dialog" aria-modal="true" aria-labelledby="diaTitle">
+  <div class="modal-head">
+    <div><p class="label" id="diaFecha">Hoy</p><h3 id="diaTitle">Menú del día</h3></div>
+    <button class="icon-btn" id="diaClose" aria-label="Cerrar"><iconify-icon icon="ph:x"></iconify-icon></button>
+  </div>
+  <div class="modal-body" id="diaCard"><p class="muted center">Cargando el menú de hoy…</p></div>
+</div>
+
+<!-- CARTA -->
+<section class="section section-dark" id="carta">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><p class="label">La carta</p><h2 class="h2">Todo lo que <em>cocinamos.</em></h2></div>
+      <div class="search"><iconify-icon icon="ph:magnifying-glass"></iconify-icon><input type="search" id="search" placeholder="Buscar platillo…" autocomplete="off"></div>
+    </div>
+    <div class="notice reveal">
+      <iconify-icon icon="ph:package"></iconify-icon>
+      <p><strong>Para recoger o a domicilio:</strong> se suman <strong>$10</strong> por platillo por empaque. En <strong>Cafetería, Crepería y Bebidas</strong> el cargo es de <strong>$5</strong>. Para comer aquí no aplica.</p>
+    </div>
+    <div class="tabs-wrap"><div class="tabs" id="tabs"></div></div>
+    <div id="panels"></div>
+  </div>
+</section>
+
+<!-- NÚMEROS -->
+<section class="section-light stats">
+  <div class="wrap stats-grid reveal">
+    <div><strong data-count="177">0</strong><span>platillos en carta</span></div>
+    <div><strong data-count="14">0</strong><span>categorías</span></div>
+    <div><strong data-count="3">0</strong><span>tiempos en el menú del día</span></div>
+    <div><strong data-count="4.8" data-dec="1">0</strong><span>calificación en Uber Eats</span></div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="section section-dark" id="galeria">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><p class="label">Galería</p><h2 class="h2">De la cocina <em>a tu mesa.</em></h2></div></div>
+    <div class="gallery reveal">
+      <figure class="g-big"><img src="images/molcajete.jpg" alt="Molcajete"><figcaption>Molcajete Ber-Mely</figcaption></figure>
+      <figure><img src="images/desayunos.jpg" alt="Chilaquiles"><figcaption>Chilaquiles</figcaption></figure>
+      <figure><img src="images/crepas.jpg" alt="Crepas"><figcaption>Crepas</figcaption></figure>
+      <figure><img src="images/cortes.jpg" alt="Cortes"><figcaption>Cortes</figcaption></figure>
+      <figure><img src="images/frappes.jpg" alt="Frappés"><figcaption>Frappés</figcaption></figure>
+      <figure class="g-wide"><img src="images/hamburguesa.jpg" alt="Hamburguesa"><figcaption>Hamburguesas</figcaption></figure>
+      <figure><img src="images/mariscos.jpg" alt="Mojarra"><figcaption>Del mar</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="section section-cafe">
+  <div class="wrap grid-2 reveal">
+    <div>
+      <p class="label">Nosotros</p>
+      <h2 class="h2">Un lugar del pueblo de Tlaltenco, <em>para todo el mundo.</em></h2>
+      <p class="lead">Cocinamos al momento, con porciones generosas y precios justos. Desayunos completos, menú del día a tres tiempos, platillos a la carta, antojitos mexicanos, mariscos toda la semana y cafetería con crepas y frappés a cualquier hora, todos los días.</p>
+      <p class="lead" style="margin-top:1rem">Los fines de semana: pancita y pozole, con tortillas hechas al momento en prensa.</p>
+      <ul class="pills">
+        <li>Al momento</li><li>Porciones generosas</li><li>Precios justos</li><li>Tortillas hechas a mano</li><li>Uber Eats · Rappi</li>
+      </ul>
+    </div>
+    <div class="about-img"><img src="images/hero.jpg" alt="Interior Ber-Mely" data-parallax="0.06"></div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section section-dark" id="contacto">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><p class="label">Contacto</p><h2 class="h2">Pide, pregunta o <em>reserva.</em></h2></div></div>
+    <div class="contact reveal">
+      <a href="https://wa.me/525537317794?text=Hola%20Ber-Mely%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener"><iconify-icon icon="ph:whatsapp-logo"></iconify-icon><div><strong>WhatsApp</strong><span>55 3731 7794</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+      <a href="https://wa.me/525539637021?text=Hola%20Ber-Mely%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener"><iconify-icon icon="ph:whatsapp-logo"></iconify-icon><div><strong>WhatsApp</strong><span>55 3963 7021</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+      <a href="tel:+525537317794"><iconify-icon icon="ph:phone"></iconify-icon><div><strong>Llamar</strong><span>55 3731 7794</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+      <a href="https://www.facebook.com/search/top?q=Ber-Mely" target="_blank" rel="noopener"><iconify-icon icon="ph:facebook-logo"></iconify-icon><div><strong>Facebook</strong><span>Ber-Mely</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+      <a href="https://www.tiktok.com/@restaurantecafebermely" target="_blank" rel="noopener"><iconify-icon icon="ph:tiktok-logo"></iconify-icon><div><strong>TikTok</strong><span>@restaurantecafebermely</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+      <a href="https://www.ubereats.com/mx/search?q=Ber-Mely" target="_blank" rel="noopener"><iconify-icon icon="simple-icons:ubereats"></iconify-icon><div><strong>Uber Eats</strong><span>Entrega a domicilio</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+      <a href="https://www.rappi.com.mx/restaurantes?query=Ber-Mely" target="_blank" rel="noopener"><iconify-icon icon="simple-icons:rappi"></iconify-icon><div><strong>Rappi</strong><span>Entrega a domicilio</span></div><iconify-icon icon="ph:arrow-up-right" class="arr"></iconify-icon></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <img src="images/logo.png" alt="Ber-Mely" width="64" height="64">
+    <p>Nuestros platillos se preparan al momento para garantizar la frescura y calidad de cada ingrediente. Agradecemos su paciencia y preferencia.</p>
+    <p class="small">© <span id="year"></span> Ber-Mely Restaurante Café · Tláhuac, CDMX · Precios en MXN, sujetos a cambio.</p>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/525537317794?text=Hola%20Ber-Mely%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="WhatsApp"><iconify-icon icon="ph:whatsapp-logo"></iconify-icon></a>
+
+<!-- CARRITO -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart" id="cart" aria-label="Tu pedido">
+  <div class="cart-head"><div><p class="label">Tu pedido</p><h3>Carrito</h3></div><button class="icon-btn" id="cartClose" aria-label="Cerrar"><iconify-icon icon="ph:x"></iconify-icon></button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="field-row">
+      <label class="field">Nombre<input type="text" id="cName" placeholder="Tu nombre"></label>
+      <label class="field">Modo<select id="cMode"><option value="Para comer aquí">Comer aquí</option><option value="Para recoger">Para recoger</option><option value="A domicilio">A domicilio</option></select></label>
+    </div>
+    <label class="field">Notas<textarea id="cNotes" rows="2" placeholder="Sin cebolla, salsa aparte, dirección…"></textarea></label>
+    <div class="sub-rows" id="cartRows"></div>
+    <div class="total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+    <button class="btn btn-yellow full" id="sendWA"><iconify-icon icon="ph:whatsapp-logo"></iconify-icon> Enviar pedido por WhatsApp</button>
+    <button class="link-btn" id="clearCart">Vaciar carrito</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+<script>
+/* =====================================================================
+   BER-MELY · app.js
+   MENU_DIA_URL → URL raw de GitHub del menú del día, ej.:
+   https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/menu-del-dia.json
+   (también se puede pasar con ?dia=URL en la dirección de la página)
+   ===================================================================== */
+const MENU_DIA_URL = "menu-del-dia.json";
+const MENU_URL     = "menu.json";
+const WHATSAPP     = "525537317794";
+/* Coordenadas del restaurante (ajústalas si el pin no cae exacto: clic derecho en Google Maps → copiar coordenadas) */
+const REST = { lat: 19.297633, lng: -99.0220159, nombre: "Café Ber-Mely", placeId: "ChIJ2_6tZAADzoURotOTGGvAmZI" };
+/* Cargo por empaque (solo para recoger / a domicilio) */
+const FEE_DEFAULT  = 10;                                    // $ por platillo
+const FEE_LIGHT    = 5;                                     // $ por platillo en estas categorías
+const FEE_LIGHT_CATS = ["Cafetería", "La Crepería", "Bebidas", "Coctelería"];
+const MENU_EMBED = {
+ "categorias": [
+  {
+   "id": "desayunos",
+   "nombre": "Desayunos · 8:30 – 12:30 (incluye café o té)",
+   "icono": "ph:egg-crack",
+   "imagen": "images/desayunos.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Chilaquiles, enchiladas y…",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Chilaquiles verdes o rojos",
+       "precio": 96
+      },
+      {
+       "nombre": "Chilaquiles con huevo al gusto",
+       "precio": 116
+      },
+      {
+       "nombre": "Chilaquiles con pechuga a la plancha",
+       "precio": 133
+      },
+      {
+       "nombre": "Chilaquiles con bistec",
+       "precio": 139
+      },
+      {
+       "nombre": "Chilaquiles con costilla",
+       "precio": 159
+      },
+      {
+       "nombre": "Chilaquiles con cecina",
+       "precio": 159
+      },
+      {
+       "nombre": "Chilaquiles con arrachera",
+       "precio": 169
+      },
+      {
+       "nombre": "Enchiladas (verdes o rojas)",
+       "precio": 117
+      },
+      {
+       "nombre": "Enchiladas suizas",
+       "precio": 123
+      },
+      {
+       "nombre": "Enfrijoladas",
+       "precio": 107
+      },
+      {
+       "nombre": "Enmoladas",
+       "precio": 123
+      }
+     ]
+    },
+    {
+     "nombre": "Huevos al gusto",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Huevos divorciados",
+       "precio": 99
+      },
+      {
+       "nombre": "Huevos rancheros estilo Ber-Mely (queso panela con chapulines)",
+       "precio": 129
+      },
+      {
+       "nombre": "Huevos al gusto (jamón, tocino, salchicha, chorizo o a la mexicana)",
+       "precio": 96
+      },
+      {
+       "nombre": "Omelette clásico (jamón con queso)",
+       "precio": 106
+      },
+      {
+       "nombre": "Omelette (champiñones o espinacas)",
+       "precio": 113
+      }
+     ]
+    },
+    {
+     "nombre": "Molletes",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Molletes clásicos (pico de gallo con aguacate)",
+       "precio": 89
+      },
+      {
+       "nombre": "Molletes hawaianos (jamón, piña salteada, manchego y pico de gallo)",
+       "precio": 103
+      },
+      {
+       "nombre": "Molletes argentinos (chorizo argentino, manchego y pico de gallo)",
+       "precio": 109
+      },
+      {
+       "nombre": "Molletes chistorra (chistorra, manchego y pico de gallo)",
+       "precio": 109
+      },
+      {
+       "nombre": "Molletes de la granja (huevo estrellado, tocino, manchego y pico de gallo)",
+       "precio": 115
+      }
+     ]
+    },
+    {
+     "nombre": "Otros",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Hot cakes (2 pzas)",
+       "precio": 99
+      },
+      {
+       "nombre": "Sincronizadas (3 pzas, con pico de gallo)",
+       "precio": 93
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "entradas",
+   "nombre": "Entradas",
+   "icono": "ph:bowl-food",
+   "imagen": "images/menu-dia.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Entradas",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Orden de guacamole con totopos",
+       "precio": 85
+      },
+      {
+       "nombre": "Orden de frijoles refritos con totopos",
+       "precio": 50
+      },
+      {
+       "nombre": "Queso fundido con chapulines",
+       "precio": 96
+      },
+      {
+       "nombre": "Orden de chapulines con guacamole y queso panela",
+       "precio": 126
+      },
+      {
+       "nombre": "Consomé de pollo o sopa del día",
+       "precio": 30
+      },
+      {
+       "nombre": "Arroz del día o ensalada dulce",
+       "precio": 30
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "carta",
+   "nombre": "A la carta",
+   "icono": "ph:knife",
+   "imagen": "images/cortes.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Cortes y pechugas (con guacamole, frijoles refritos, papas y cebollitas cambray)",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Ribeye",
+       "precio": 346
+      },
+      {
+       "nombre": "New York",
+       "precio": 346
+      },
+      {
+       "nombre": "T-Bone",
+       "precio": 346
+      },
+      {
+       "nombre": "Sirloin",
+       "precio": 346
+      },
+      {
+       "nombre": "Picanha",
+       "precio": 346
+      },
+      {
+       "nombre": "Arrachera (ensalada, guacamole, frijoles y cebollitas)",
+       "precio": 289
+      },
+      {
+       "nombre": "Costilla de res",
+       "precio": 226
+      },
+      {
+       "nombre": "Orden de cecina",
+       "precio": 289
+      },
+      {
+       "nombre": "Pechuga rellena (jamón, manchego y Oaxaca)",
+       "precio": 166
+      },
+      {
+       "nombre": "Pechuga empanizada (ensalada, papas y frijoles)",
+       "precio": 146
+      },
+      {
+       "nombre": "Pechuga asada (ensalada, papas y frijoles)",
+       "precio": 139
+      },
+      {
+       "nombre": "Bistec a la mexicana o encebollado (frijoles y nopal asado)",
+       "precio": 139
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mar",
+   "nombre": "Algo del mar",
+   "icono": "ph:fish",
+   "imagen": "images/mariscos.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Algo del mar",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Mojarra frita (arroz, ensalada y papas)",
+       "precio": 219
+      },
+      {
+       "nombre": "Mojarra a la diabla (arroz, ensalada y papas)",
+       "precio": 219
+      },
+      {
+       "nombre": "Mojarra al mojo de ajo (arroz, ensalada y papas)",
+       "precio": 219
+      },
+      {
+       "nombre": "Camarones a la diabla (arroz, ensalada y papas)",
+       "precio": 219
+      },
+      {
+       "nombre": "Camarones empanizados (arroz, ensalada y papas)",
+       "precio": 219
+      },
+      {
+       "nombre": "Camarones al mojo de ajo (arroz, ensalada y papas)",
+       "precio": 219
+      },
+      {
+       "nombre": "Aguachile de camarón",
+       "precio": 219
+      },
+      {
+       "nombre": "Filete de pescado empanizado o al ajillo (ensalada, frijoles y papas)",
+       "precio": 156
+      },
+      {
+       "nombre": "Filete de pescado asado (ensalada, frijoles y papas)",
+       "precio": 146
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tacos",
+   "nombre": "Tacos y otros",
+   "icono": "ph:fork-knife",
+   "imagen": "images/cortes.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Incluye papas a la francesa, nopal asado y cebolla fileteada · +$27 con queso",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Arrachera (orden de 3)",
+       "precio": 136
+      },
+      {
+       "nombre": "Cecina (orden de 3)",
+       "precio": 136
+      },
+      {
+       "nombre": "Chorizo argentino o campechano con arrachera (orden de 3)",
+       "precio": 136
+      },
+      {
+       "nombre": "Bistec (orden de 3)",
+       "precio": 113
+      },
+      {
+       "nombre": "Campechano bistec/longaniza (orden de 3)",
+       "precio": 113
+      },
+      {
+       "nombre": "Al pastor (orden de 3)",
+       "precio": 93
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "burritos",
+   "nombre": "Burritos y alambres",
+   "icono": "ph:fire",
+   "imagen": "images/cortes.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Burritos",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Burrito galán (camarones en crema de chipotle)",
+       "precio": 156
+      },
+      {
+       "nombre": "Burrito paraíso (camarones empanizados con queso philadelphia)",
+       "precio": 156
+      },
+      {
+       "nombre": "Burrito de arrachera",
+       "precio": 139
+      },
+      {
+       "nombre": "Burrito de bistec o campechano",
+       "precio": 126
+      },
+      {
+       "nombre": "Burrito de longaniza",
+       "precio": 106
+      },
+      {
+       "nombre": "Burrito al pastor",
+       "precio": 99
+      }
+     ]
+    },
+    {
+     "nombre": "Alambres",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Alambre de arrachera",
+       "precio": 169
+      },
+      {
+       "nombre": "Alambre de pollo",
+       "precio": 149
+      },
+      {
+       "nombre": "Alambre de bistec, campechano, pastor o chuleta",
+       "precio": 146
+      },
+      {
+       "nombre": "Alambre fortachón (chuleta ahumada, tocino, chorizo y champiñón)",
+       "precio": 169
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "molcajetes",
+   "nombre": "Molcajetes",
+   "icono": "ph:cooking-pot",
+   "imagen": "images/molcajete.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Con cebolla cambray, nopal asado, queso panela, chicharrón y salsa de la casa",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Molcajete aguachile",
+       "precio": 553
+      },
+      {
+       "nombre": "Molcajete mar y tierra (camarones al ajillo, filete al ajillo, costilla de res, longaniza, arrachera y pechuga)",
+       "precio": 556
+      },
+      {
+       "nombre": "Molcajete Ber-Mely (pechuga, arrachera, costillas de res, chorizo argentino, chistorra y bistec)",
+       "precio": 556
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ensaladas",
+   "nombre": "Ensaladas",
+   "icono": "ph:leaf",
+   "imagen": "images/molcajete.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Ensaladas",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Ensalada Ber-Mely (mix de lechugas, espinacas, jitomate, cebolla morada, jícama, panela, queso azul, pechuga o bistec y chapulines)",
+       "precio": 159
+      },
+      {
+       "nombre": "Ensalada Primavera (lechugas, espinacas, mango, piña, durazno, pechuga o bistec, ajonjolí garapiñado y frutos finos)",
+       "precio": 139
+      },
+      {
+       "nombre": "Ensalada Campestre (lechugas, espinacas, elote, cebolla, ajonjolí garapiñado, frutos finos y huevo duro)",
+       "precio": 126
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "finde",
+   "nombre": "Exclusivos de sábados y domingos",
+   "icono": "ph:calendar-check",
+   "imagen": "images/molcajete.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Caldos · con tortillas hechas al momento",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Pancita de res",
+       "precio": 120
+      },
+      {
+       "nombre": "Pozole blanco (puerco, pollo o mixto)",
+       "precio": 120
+      }
+     ]
+    },
+    {
+     "nombre": "Caldos de gallina",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Pierna",
+       "precio": 86
+      },
+      {
+       "nombre": "Muslo",
+       "precio": 86
+      },
+      {
+       "nombre": "Rabadilla",
+       "precio": 76
+      },
+      {
+       "nombre": "Huacal",
+       "precio": 76
+      },
+      {
+       "nombre": "Ala",
+       "precio": 76
+      },
+      {
+       "nombre": "1/4 de pechuga",
+       "precio": 99
+      },
+      {
+       "nombre": "1/2 pechuga",
+       "precio": 116
+      },
+      {
+       "nombre": "Consomé con pechuga deshebrada",
+       "precio": 65
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bebidas",
+   "nombre": "Bebidas",
+   "icono": "ph:wine",
+   "imagen": "images/bebidas.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Jugos en vaso de 560 ml",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Naranja (Jumex)",
+       "precio": 40
+      },
+      {
+       "nombre": "Manzana (Jumex)",
+       "precio": 40
+      },
+      {
+       "nombre": "Durazno (Jumex)",
+       "precio": 40
+      },
+      {
+       "nombre": "Mango (Jumex)",
+       "precio": 40
+      }
+     ]
+    },
+    {
+     "nombre": "Aguas frescas 560 ml (1 litro $70 · jarra $130)",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Fresa mango",
+       "precio": 35
+      },
+      {
+       "nombre": "Piña guayaba",
+       "precio": 35
+      },
+      {
+       "nombre": "Horchata fresa",
+       "precio": 35
+      },
+      {
+       "nombre": "Sandía limón",
+       "precio": 35
+      },
+      {
+       "nombre": "Frutos rojos",
+       "precio": 35
+      }
+     ]
+    },
+    {
+     "nombre": "+ Bebidas",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Agua natural",
+       "precio": 15
+      },
+      {
+       "nombre": "Jugo de naranja natural",
+       "precio": 45
+      },
+      {
+       "nombre": "Naranjada natural o mineral",
+       "precio": 45
+      },
+      {
+       "nombre": "Limonada natural o mineral",
+       "precio": 45
+      },
+      {
+       "nombre": "Coca Cola",
+       "precio": 35
+      },
+      {
+       "nombre": "Sprite",
+       "precio": 35
+      },
+      {
+       "nombre": "Fanta",
+       "precio": 35
+      },
+      {
+       "nombre": "Sidral Mundet",
+       "precio": 35
+      },
+      {
+       "nombre": "Agua mineral",
+       "precio": 35
+      },
+      {
+       "nombre": "Sangría",
+       "precio": 35
+      },
+      {
+       "nombre": "Cerveza Modelo Especial (clara u oscura)",
+       "precio": 50
+      },
+      {
+       "nombre": "Cerveza Victoria",
+       "precio": 50
+      }
+     ]
+    },
+    {
+     "nombre": "Cervezas escarchadas (extra)",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Vaso escarchado (sal y limón, tamarindo c/ajonjolí y salsas)",
+       "precio": 15
+      },
+      {
+       "nombre": "Vaso michelado (sal, limón, tamarindo, Maggi e inglesa)",
+       "precio": 20
+      },
+      {
+       "nombre": "Vaso clamato (sal, limón, tamarindo y clamato)",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "nombre": "Jarras",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Jarra de limonada (natural o mineral)",
+       "precio": 160
+      },
+      {
+       "nombre": "Jarra de naranjada (natural o mineral)",
+       "precio": 160
+      }
+     ]
+    },
+    {
+     "nombre": "Coctelería · 12:00 – 17:00",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Cantaritos tequila Hornitos (tamarindo, naranja o frutos rojos)",
+       "precio": 120
+      },
+      {
+       "nombre": "Margarita frozen tequila Hornitos (naranja, tamarindo, mango)",
+       "precio": 120
+      },
+      {
+       "nombre": "Mojitos (clásico, frutos rojos)",
+       "precio": 130
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lomejor",
+   "nombre": "Lo mejor de la cafetería",
+   "icono": "ph:hamburger",
+   "imagen": "images/hamburguesa.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Hamburguesas + papas a la francesa",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Hamburguesa de res (jamón, queso amarillo y manchego)",
+       "precio": 116
+      },
+      {
+       "nombre": "Hamburguesa hawaiana (jamón, queso amarillo, manchego y piña)",
+       "precio": 126
+      },
+      {
+       "nombre": "Hamburguesa de pollo (jamón, queso amarillo y manchego)",
+       "precio": 126
+      },
+      {
+       "nombre": "Hamburguesa especial (jamón, tocino, queso amarillo, manchego, Oaxaca y champiñones)",
+       "precio": 159
+      },
+      {
+       "nombre": "Hamburguesa especial doble carne",
+       "precio": 179
+      }
+     ]
+    },
+    {
+     "nombre": "Sandwich's",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Club sandwich (pollo, jamón y tocino)",
+       "precio": 139
+      },
+      {
+       "nombre": "Club sandwich arrachera (arrachera y queso manchego)",
+       "precio": 190
+      },
+      {
+       "nombre": "Sandwich 4 quesos (manchego, amarillo, Oaxaca y panela)",
+       "precio": 149
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "snacks",
+   "nombre": "Snack's",
+   "icono": "ph:popcorn",
+   "imagen": "images/hamburguesa.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Snack's",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Hot dog sencillo (2 pzs)",
+       "precio": 79
+      },
+      {
+       "nombre": "Hot dog hawaiano (tocino, piña y queso) (2 pzs)",
+       "precio": 89
+      },
+      {
+       "nombre": "Hot dog especial (tocino, cebolla caramelizada, guacamole y manchego) (2 pzs)",
+       "precio": 113
+      },
+      {
+       "nombre": "Alitas 6 pzs (chipotle, mango habanero, tamarindo chipotle o búfalo)",
+       "precio": 83
+      },
+      {
+       "nombre": "Boneless",
+       "precio": 93
+      },
+      {
+       "nombre": "Papas a la francesa",
+       "precio": 63
+      },
+      {
+       "nombre": "Nachos",
+       "precio": 63
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "creperia",
+   "nombre": "La Crepería",
+   "icono": "ph:cookie",
+   "imagen": "images/crepas.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Saladas c/queso",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Jamón de pavo o pierna",
+       "precio": 109
+      },
+      {
+       "nombre": "Champiñones",
+       "precio": 109
+      },
+      {
+       "nombre": "Atún",
+       "precio": 109
+      }
+     ]
+    },
+    {
+     "nombre": "Especiales saladas",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Clasic (jamón, pechuga de pavo y manchego)",
+       "precio": 119
+      },
+      {
+       "nombre": "Chapis (jamón, champiñones y manchego)",
+       "precio": 119
+      },
+      {
+       "nombre": "Ber-mely (jamón, atún y manchego)",
+       "precio": 119
+      },
+      {
+       "nombre": "Hawaiana (jamón, piña y manchego)",
+       "precio": 119
+      }
+     ]
+    },
+    {
+     "nombre": "Crepas dulces",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Cajeta con plátano",
+       "precio": 86
+      },
+      {
+       "nombre": "Mermelada de zarzamora con queso",
+       "precio": 86
+      },
+      {
+       "nombre": "Lechera con nuez",
+       "precio": 86
+      },
+      {
+       "nombre": "Nutella con queso",
+       "precio": 86
+      },
+      {
+       "nombre": "Mermelada de frutos rojos con almendras",
+       "precio": 86
+      }
+     ]
+    },
+    {
+     "nombre": "Especiales",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Frutos tropicales (queso philadelphia, fresa, mango y kiwi)",
+       "precio": 99
+      },
+      {
+       "nombre": "Frutos rojos (frambuesas, fresa y cerezas)",
+       "precio": 99
+      },
+      {
+       "nombre": "La Rufi (queso philadelphia, zarzamora y almendras)",
+       "precio": 99
+      },
+      {
+       "nombre": "Delith (queso philadelphia, cajeta y plátano)",
+       "precio": 99
+      },
+      {
+       "nombre": "Peach (queso philadelphia, durazno y lechera)",
+       "precio": 99
+      },
+      {
+       "nombre": "Zeland (Nutella, durazno y kiwi)",
+       "precio": 99
+      },
+      {
+       "nombre": "Banana (queso philadelphia, nutella y plátano)",
+       "precio": 99
+      },
+      {
+       "nombre": "Ladyn (nutella, fresa y plátano)",
+       "precio": 99
+      },
+      {
+       "nombre": "Mely (queso philadelphia, fresa, arándanos y frutos finos)",
+       "precio": 99
+      },
+      {
+       "nombre": "Dulce manzana (queso philadelphia, manzana y cajeta)",
+       "precio": 99
+      },
+      {
+       "nombre": "3 quesos (philadelphia, manchego, mozzarella, lechera y nuez)",
+       "precio": 99
+      }
+     ]
+    },
+    {
+     "nombre": "Especiales con chocolate",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Kinder Buu (nutella, fresa y Kinder Bueno)",
+       "precio": 109
+      },
+      {
+       "nombre": "Kinder Deliss (queso philadelphia, nutella y Kinder Delice)",
+       "precio": 109
+      },
+      {
+       "nombre": "Roche (nutella, nuez y Ferrero Rocher)",
+       "precio": 109
+      }
+     ]
+    },
+    {
+     "nombre": "Crepas con licor",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Coronado (cajeta, queso philadelphia, nuez y rompope)",
+       "precio": 116
+      },
+      {
+       "nombre": "Khalua (nutella, cereza y Kahlúa)",
+       "precio": 116
+      },
+      {
+       "nombre": "Baileys (nutella, durazno y Baileys)",
+       "precio": 116
+      },
+      {
+       "nombre": "Malibu (queso philadelphia, piña, lechera y Malibú)",
+       "precio": 116
+      },
+      {
+       "nombre": "Amaretto (queso philadelphia, lechera, almendras y amaretto)",
+       "precio": 116
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cafeteria",
+   "nombre": "Cafetería",
+   "icono": "ph:coffee",
+   "imagen": "images/frappes.jpg",
+   "subcategorias": [
+    {
+     "nombre": "Cafés calientes",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Café americano",
+       "precio": 46
+      },
+      {
+       "nombre": "Café expreso",
+       "precio": 46
+      },
+      {
+       "nombre": "Café capuchino",
+       "precio": 66
+      },
+      {
+       "nombre": "Leche con chocolate caliente",
+       "precio": 66
+      },
+      {
+       "nombre": "Café con leche caliente",
+       "precio": 66
+      },
+      {
+       "nombre": "Chocolate Abuelita espumoso",
+       "precio": 69
+      },
+      {
+       "nombre": "Capuchino (Moka, Cajeta y Fresa)",
+       "precio": 69
+      },
+      {
+       "nombre": "Capuchino (Rompope, Amaretto, Kahlúa y Baileys)",
+       "precio": 96
+      }
+     ]
+    },
+    {
+     "nombre": "Bebidas frías",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Café capuchino frío",
+       "precio": 66
+      },
+      {
+       "nombre": "Leche con chocolate",
+       "precio": 66
+      }
+     ]
+    },
+    {
+     "nombre": "Frappés",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Frappé con licor (Amaretto, Kahlúa, Baileys, Piña colada y Rompope)",
+       "precio": 109
+      },
+      {
+       "nombre": "Frappé (Fresa, Capuchino, Cajeta, Mazapán, 3 Leches, Oreo y Moka)",
+       "precio": 89
+      }
+     ]
+    },
+    {
+     "nombre": "Licuados",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Plátano",
+       "precio": 45
+      },
+      {
+       "nombre": "Fresa",
+       "precio": 45
+      },
+      {
+       "nombre": "Guayaba",
+       "precio": 45
+      },
+      {
+       "nombre": "Guayaba / plátano / chocolate",
+       "precio": 55
+      },
+      {
+       "nombre": "Plátano / fresa",
+       "precio": 55
+      },
+      {
+       "nombre": "Choco fresa",
+       "precio": 55
+      },
+      {
+       "nombre": "Choco banana",
+       "precio": 55
+      }
+     ]
+    },
+    {
+     "nombre": "Chamoyadas",
+     "icono": "ph:fork-knife",
+     "items": [
+      {
+       "nombre": "Chamoyada (Mango, Fresa, Guanábana, Tamarindo, Limón, Frutos Rojos)",
+       "precio": 86
+      }
+     ]
+    }
+   ]
+  }
+ ]
+};
+const DIA_EMBED  = {
+ "fecha": "2026-09-21",
+ "horario": "Lunes a viernes · 12:30 PM a 5:00 PM",
+ "tiempos": [
+  {
+   "nombre": "Sopa",
+   "incluido": true,
+   "opciones": [
+    "Consomé de pollo",
+    "Crema de elote",
+    "Sopa de fideo"
+   ]
+  },
+  {
+   "nombre": "Arroz o pasta",
+   "incluido": true,
+   "opciones": [
+    "Arroz rojo",
+    "Ensalada dulce"
+   ]
+  },
+  {
+   "nombre": "Guisado",
+   "incluido": false,
+   "opciones": [
+    {
+     "nombre": "Bistec a la mexicana",
+     "precio": 139
+    },
+    {
+     "nombre": "Pechuga empanizada",
+     "precio": 146
+    },
+    {
+     "nombre": "Chiles rellenos de queso",
+     "precio": 120
+    },
+    {
+     "nombre": "Milanesa de res",
+     "precio": 135
+    }
+   ]
+  }
+ ]
+};
+
+/* ---------- helpers ---------- */
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const money = n => "$" + Number(n).toFixed(2);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm = s => String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+let toastT;
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("show"),1800); }
+
+/* ---------- loader ---------- */
+addEventListener("load", () => setTimeout(() => $("#loader").classList.add("done"), 500));
+setTimeout(() => $("#loader").classList.add("done"), 3500); // por si algo tarda
+
+/* ---------- nav ---------- */
+const nav = $("#nav"), links = $("#navLinks"), burger = $("#burger");
+burger.onclick = () => { const o = links.classList.toggle("open"); burger.classList.toggle("open", o); burger.setAttribute("aria-expanded", o); document.body.style.overflow = o ? "hidden" : ""; };
+$$("a", links).forEach(a => a.onclick = () => { links.classList.remove("open"); burger.classList.remove("open"); document.body.style.overflow = ""; });
+$("#year").textContent = new Date().getFullYear();
+
+let lastY = 0;
+addEventListener("scroll", () => {
+  const y = scrollY, h = document.documentElement;
+  nav.classList.toggle("scrolled", y > 30);
+  nav.classList.toggle("hidden", y > lastY && y > 400 && !links.classList.contains("open"));
+  lastY = y;
+  $("#progress").style.width = (y / (h.scrollHeight - h.clientHeight) * 100) + "%";
+  parallax();
+}, {passive:true});
+
+/* ---------- parallax suave ---------- */
+const pxEls = $$("[data-parallax]");
+function parallax(){
+  const vh = innerHeight;
+  pxEls.forEach(el => {
+    const r = el.parentElement.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > vh) return;
+    const f = parseFloat(el.dataset.parallax) || 0.12;
+    const p = (r.top + r.height/2 - vh/2) / vh;         // -1 .. 1
+    el.style.transform = `translateY(${(-p * f * 100).toFixed(2)}px) scale(1.06)`;
+  });
+}
+
+/* ---------- abierto / cerrado ---------- */
+(function openStatus(){
+  const d = new Date(), day = d.getDay(), h = d.getHours() + d.getMinutes()/60;
+  const sched = {0:[9.5,20.5],1:[8.5,20.5],2:[8.5,17.5],3:[8.5,17.5],4:[8.5,20.5],5:[8.5,20.5],6:[8.5,20.5]}; // dom,lun,mar,mié,jue,vie,sáb
+  const [o,c] = sched[day], open = h >= o && h < c;
+  const fmt = x => `${Math.floor(x)}:${String(Math.round((x%1)*60)).padStart(2,"0")}`;
+  const el = $("#openStatus");
+  el.textContent = open ? `Abierto · cerramos ${fmt(c)}` : `Cerrado · abrimos ${fmt(o)}`;
+  el.classList.toggle("closed", !open);
+})();
+
+/* ---------- carrito ---------- */
+let cart = JSON.parse(localStorage.getItem("bermely_cart") || "[]");
+const saveCart = () => localStorage.setItem("bermely_cart", JSON.stringify(cart));
+function addToCart(nombre, precio, cat){
+  const f = cart.find(i => i.nombre === nombre && i.precio === precio);
+  if (f) f.qty++; else cart.push({nombre, precio, cat, qty:1});
+  saveCart(); renderCart(); toast(`Agregado · ${nombre.split("(")[0].trim()}`);
+  const b = $("#cartBtn"); b.classList.remove("bump"); void b.offsetWidth; b.classList.add("bump");
+}
+function changeQty(idx, d){ cart[idx].qty += d; if (cart[idx].qty <= 0) cart.splice(idx,1); saveCart(); renderCart(); }
+const feeFor = cat => FEE_LIGHT_CATS.some(c => norm(c) === norm(cat||"")) ? FEE_LIGHT : FEE_DEFAULT;
+const isTakeout = () => $("#cMode").value !== "Para comer aquí";
+function cartTotals(){
+  const sub = cart.reduce((a,i)=>a+i.precio*i.qty,0);
+  const fee = isTakeout() ? cart.reduce((a,i)=>a+feeFor(i.cat)*i.qty,0) : 0;
+  return {sub, fee, total: sub+fee};
+}
+function renderCart(){
+  const box = $("#cartItems"), takeout = isTakeout();
+  $("#cartCount").textContent = cart.reduce((a,i)=>a+i.qty,0);
+  box.innerHTML = cart.length ? cart.map((i,idx)=>`
+    <div class="c-item">
+      <div class="c-name">${esc(i.nombre)}<small>${esc(i.cat||"")} · ${money(i.precio)}${takeout ? ` <span class="fee">+ ${money(feeFor(i.cat))} empaque</span>` : ""}</small></div>
+      <div class="qty"><button data-i="${idx}" data-d="-1" aria-label="Menos">−</button><span>${i.qty}</span><button data-i="${idx}" data-d="1" aria-label="Más">+</button></div>
+      <div class="c-sub">${money(i.precio*i.qty)}</div>
+    </div>`).join("") : `<p class="cart-empty">Tu carrito está vacío.<br>Toca cualquier platillo de la carta para agregarlo.</p>`;
+  const t = cartTotals();
+  $("#cartRows").innerHTML = cart.length ? `
+    <div><span>Subtotal</span><strong>${money(t.sub)}</strong></div>
+    <div><span>Empaque (${takeout ? "recoger / domicilio" : "no aplica al comer aquí"})</span><strong>${money(t.fee)}</strong></div>
+    ${takeout ? `<span class="hint">$${FEE_DEFAULT} por platillo · $${FEE_LIGHT} en Cafetería, Crepería y Bebidas</span>` : ""}` : "";
+  $("#cartTotal").textContent = money(t.total);
+  $$(".qty button", box).forEach(b => b.onclick = () => changeQty(+b.dataset.i, +b.dataset.d));
+}
+const openCart = () => { $("#cart").classList.add("open"); $("#cartOverlay").classList.add("open"); document.body.style.overflow = "hidden"; };
+const closeCart = () => { $("#cart").classList.remove("open"); $("#cartOverlay").classList.remove("open"); document.body.style.overflow = ""; };
+$("#cMode").onchange = renderCart;
+$("#cartBtn").onclick = openCart; $("#cartClose").onclick = closeCart; $("#cartOverlay").onclick = closeCart;
+$("#clearCart").onclick = () => { if (cart.length && confirm("¿Vaciar el carrito?")) { cart=[]; saveCart(); renderCart(); } };
+$("#sendWA").onclick = () => {
+  if (!cart.length) return toast("Tu carrito está vacío");
+  const name = $("#cName").value.trim(), mode = $("#cMode").value, notes = $("#cNotes").value.trim();
+  const t = cartTotals(), takeout = isTakeout();
+  let msg = `*PEDIDO BER-MELY*\n`;
+  if (name) msg += `Nombre: ${name}\n`;
+  msg += `Modo: ${mode}\n\n`;
+  cart.forEach(i => msg += `• ${i.qty} x ${i.nombre} — ${money(i.precio*i.qty)}${takeout ? ` (+${money(feeFor(i.cat)*i.qty)} empaque)` : ""}\n`);
+  msg += `\nSubtotal: ${money(t.sub)}`;
+  if (takeout) msg += `\nEmpaque: ${money(t.fee)}`;
+  msg += `\n*TOTAL: ${money(t.total)}*`;
+  if (notes) msg += `\n\nNotas: ${notes}`;
+  msg += `\n\n_Enviado desde la carta digital_`;
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
+};
+renderCart();
+
+/* ---------- carta ---------- */
+let MENU = null;
+fetch(MENU_URL).then(r => { if(!r.ok) throw 0; return r.json(); }).catch(() => MENU_EMBED)
+  .then(data => { MENU = data; buildCarta(data.categorias); });
+
+function itemHTML(it, cat, i){
+  return `<div class="item" style="animation-delay:${Math.min(i*30,500)}ms" data-n="${esc(it.nombre)}" data-p="${it.precio}" data-c="${esc(cat)}">
+    <span class="item-name">${esc(it.nombre)}</span><span class="item-dots"></span>
+    <span class="item-price">${money(it.precio)}</span><span class="item-add"><iconify-icon icon="ph:plus"></iconify-icon></span></div>`;
+}
+const bindItems = root => $$(".item", root).forEach(el => el.onclick = () => addToCart(el.dataset.n, +el.dataset.p, el.dataset.c));
+const shortName = n => n.split("(")[0].split("·")[0].trim();
+
+function buildCarta(cats, activeId){
+  const tabs = $("#tabs"), panels = $("#panels");
+  const act = activeId || cats[0].id;
+  tabs.innerHTML = cats.map(c=>`<button class="tab ${c.id===act?"active":""}" data-id="${c.id}"><iconify-icon icon="${c.icono}"></iconify-icon>${esc(shortName(c.nombre))}</button>`).join("");
+  panels.innerHTML = cats.map(c=>{ let k=0; return `
+    <div class="panel ${c.id===act?"active":""}" id="panel-${c.id}">
+      ${c.imagen ? `<div class="panel-hero"><img src="${c.imagen}" alt="${esc(c.nombre)}" loading="lazy"><h3>${esc(c.nombre)}</h3></div>` : ""}
+      ${c.subcategorias.map(s=>`
+        <div class="sub-block">
+          <h4><iconify-icon icon="${s.icono||'ph:fork-knife'}"></iconify-icon>${esc(s.nombre)}</h4>
+          <div class="items">${s.items.map(it=>itemHTML(it, shortName(c.nombre), k++)).join("")}</div>
+        </div>`).join("")}
+    </div>`;}).join("");
+  $$(".tab").forEach(t => t.onclick = () => {
+    $("#search").value = "";
+    buildCarta(cats, t.dataset.id);
+    t = $(`.tab[data-id="${t.dataset.id}"]`); t.scrollIntoView({behavior:"smooth", block:"nearest", inline:"center"});
+    const top = $("#carta").getBoundingClientRect().top + scrollY;
+    if (scrollY > top + 200) scrollTo({top: top, behavior:"smooth"});
+  });
+  bindItems(panels);
+}
+$("#search").addEventListener("input", e => {
+  const q = e.target.value.trim(); if (!MENU) return;
+  if (!q){ buildCarta(MENU.categorias); return; }
+  const res = [];
+  MENU.categorias.forEach(c => c.subcategorias.forEach(s => s.items.forEach(it => { if (norm(it.nombre).includes(norm(q)) || norm(s.nombre).includes(norm(q))) res.push({it, cat:shortName(c.nombre)}); })));
+  $$(".tab").forEach(x=>x.classList.remove("active"));
+  $("#panels").innerHTML = res.length
+    ? `<div class="panel active"><div class="sub-block" style="margin-top:1.8rem"><h4><iconify-icon icon="ph:magnifying-glass"></iconify-icon>${res.length} resultado${res.length>1?"s":""}</h4><div class="items">${res.map((r,i)=>itemHTML(r.it, r.cat, i)).join("")}</div></div></div>`
+    : `<p class="no-results">Sin resultados para "${esc(q)}".</p>`;
+  bindItems($("#panels"));
+});
+
+/* ---------- menú del día (modal) ---------- */
+const openDia  = () => { $("#diaModal").classList.add("open"); $("#diaModalBg").classList.add("open"); document.body.style.overflow="hidden"; };
+const closeDia = () => { $("#diaModal").classList.remove("open"); $("#diaModalBg").classList.remove("open"); document.body.style.overflow=""; };
+$("#openDia").onclick = openDia; $("#diaClose").onclick = closeDia; $("#diaModalBg").onclick = closeDia;
+document.addEventListener("keydown", e => { if (e.key === "Escape") { closeDia(); closeCart(); } });
+
+(async function loadMenuDia(){
+  const url = new URLSearchParams(location.search).get("dia") || MENU_DIA_URL;
+  const card = $("#diaCard");
+  try {
+    let d;
+    try { const r = await fetch(url + (url.includes("?") ? "&" : "?") + "t=" + Date.now(), {cache:"no-store"}); if (!r.ok) throw 0; d = await r.json(); }
+    catch { d = DIA_EMBED; }
+
+    if (d.horario) $("#diaHorario").textContent = d.horario;
+    if (d.fecha) { const f = new Date(d.fecha + "T12:00:00").toLocaleDateString("es-MX",{weekday:"long",day:"numeric",month:"long"}); $("#diaFecha").textContent = f.charAt(0).toUpperCase() + f.slice(1); }
+
+    const tiempos = (d.tiempos||[]).map((t,i,arr) => ({
+      nombre: t.nombre,
+      incluido: t.incluido !== undefined ? !!t.incluido : i < arr.length-1,
+      opciones: (t.opciones||[]).map(o => typeof o === "string" ? {nombre:o, precio:0} : {nombre:o.nombre, precio:+o.precio||0})
+    }));
+    const mainIdx = tiempos.findIndex(t => !t.incluido);
+    const sel = tiempos.map(() => null);
+
+    card.innerHTML = `
+      ${tiempos.map((t,ti)=>`
+        <div class="tiempo">
+          <h4><span class="num">0${ti+1}</span>${esc(t.nombre)}<span class="tag ${t.incluido?"":"pay"}">${t.incluido ? "Incluido" : "Define el precio"}</span></h4>
+          ${t.opciones.map((o,oi)=>`
+            <div class="opcion" data-t="${ti}" data-o="${oi}" role="radio" aria-checked="false">
+              <span class="radio"></span><span class="op-name">${esc(o.nombre)}</span>
+              ${t.incluido ? "" : `<span class="op-price">${money(o.precio)}</span>`}
+            </div>`).join("")}
+        </div>`).join("")}
+      <p class="dia-extra">Incluye agua del día.</p>
+      <div class="dia-foot">
+        <div class="dia-sum"><span class="dia-msg" id="diaMsg">Elige tu guisado para continuar</span><span class="dia-price" id="diaTotal">$0.00</span></div>
+        <button class="btn btn-dark full" id="addDia" disabled>Agregar al pedido <iconify-icon icon="ph:arrow-right"></iconify-icon></button>
+      </div>`;
+
+    const refresh = () => {
+      $$(".opcion", card).forEach(el => { const on = sel[+el.dataset.t] === +el.dataset.o; el.classList.toggle("sel", on); el.setAttribute("aria-checked", on); });
+      const main = mainIdx >= 0 && sel[mainIdx] !== null ? tiempos[mainIdx].opciones[sel[mainIdx]] : null;
+      $("#diaTotal").textContent = money(main ? main.precio : 0);
+      $("#addDia").disabled = !main;
+      const incl = tiempos.map((t,ti)=> t.incluido && sel[ti]!==null ? t.opciones[sel[ti]].nombre : null).filter(Boolean);
+      $("#diaMsg").textContent = main ? [main.nombre, ...incl].join(" · ") : "Elige tu guisado para continuar";
+      $("#diaMsg").classList.toggle("ok", !!main);
+    };
+    $$(".opcion", card).forEach(el => el.onclick = () => { const t=+el.dataset.t, o=+el.dataset.o; sel[t] = sel[t]===o ? null : o; refresh(); });
+    $("#addDia").onclick = () => {
+      if (mainIdx < 0 || sel[mainIdx] === null) return toast("Elige el guisado (tercer tiempo)");
+      const main = tiempos[mainIdx].opciones[sel[mainIdx]];
+      const incl = tiempos.map((t,ti)=> t.incluido && sel[ti]!==null ? t.opciones[sel[ti]].nombre : null).filter(Boolean);
+      addToCart(`Menú del día – ${main.nombre}` + (incl.length ? ` (con ${incl.join(" y ")})` : " (solo guisado)"), main.precio, "Menú del día");
+      sel.fill(null); refresh(); closeDia(); setTimeout(openCart, 250);
+    };
+    refresh();
+  } catch(e) {
+    console.error(e);
+    card.innerHTML = `<p class="muted center" style="padding:2rem 0">Hoy no hay menú del día publicado.<br>Pregúntanos por WhatsApp.</p>`;
+  }
+})();
+
+/* ---------- scroll reveal + contadores ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add("in"); io.unobserve(e.target);
+  $$("[data-count]", e.target).forEach(el => {
+    const end = parseFloat(el.dataset.count), dec = +el.dataset.dec || 0, t0 = performance.now(), dur = 1400;
+    const step = now => { const p = Math.min((now - t0)/dur, 1), ease = 1 - Math.pow(1-p, 3); el.textContent = (end*ease).toFixed(dec); if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  });
+}), {threshold:.15});
+$$(".reveal").forEach(el => io.observe(el));
+parallax();
+
+/* ---------- ubicación: mapa + distancia ---------- */
+(function geo(){
+  const q = encodeURIComponent(`${REST.lat},${REST.lng}`);
+  const frame = $("#mapFrame"), bar = $("#distBar"), main = $("#distMain"), sub = $("#distSub"), btn = $("#geoBtn");
+  const baseDir = `https://www.google.com/maps/dir/?api=1&destination=${q}&destination_place_id=${REST.placeId}&travelmode=driving`;
+  frame.src = `https://www.google.com/maps?q=${encodeURIComponent("Café Ber-Mely, San Rafael Atlixco, San Francisco Tlaltenco, Tláhuac")}&ll=${q}&z=17&output=embed`;
+  $("#dirLink").href = baseDir;
+  $("#wazeLink").href = `https://waze.com/ul?ll=${REST.lat},${REST.lng}&navigate=yes`;
+
+  const R = 6371, rad = x => x*Math.PI/180;
+  const km = (a,b,c,d) => { const dLat=rad(c-a), dLng=rad(d-b); const h=Math.sin(dLat/2)**2 + Math.cos(rad(a))*Math.cos(rad(c))*Math.sin(dLng/2)**2; return 2*R*Math.asin(Math.sqrt(h)); };
+  const fmtKm = k => k < 1 ? `${Math.round(k*1000)} m` : `${k.toFixed(k<10?1:0)} km`;
+  const mins = (k, kmh) => Math.max(1, Math.round(k/kmh*60*1.3)); // ×1.3 por calles vs. línea recta
+
+  function ok(pos){
+    const {latitude:la, longitude:lo} = pos.coords;
+    const d = km(la, lo, REST.lat, REST.lng);
+    bar.classList.remove("loading"); bar.classList.add("ok");
+    main.textContent = `Estás a ${fmtKm(d)} de Ber-Mely`;
+    sub.textContent = d < 3 ? `Aprox. ${mins(d,4.5)} min caminando · ${mins(d,25)} min en auto` : `Aprox. ${mins(d,28)} min en auto · ${mins(d,18)} min en transporte`;
+    btn.innerHTML = `<iconify-icon icon="ph:arrows-clockwise"></iconify-icon> Actualizar`;
+    frame.src = `https://www.google.com/maps?saddr=${la},${lo}&daddr=${q}&output=embed`;
+    $("#dirLink").href = `https://www.google.com/maps/dir/?api=1&origin=${la},${lo}&destination=${q}&destination_place_id=${REST.placeId}&travelmode=driving`;
+    sessionStorage.setItem("bermely_geo", "1");
+  }
+  function fail(err){
+    bar.classList.remove("loading");
+    main.textContent = err && err.code === 1 ? "Permiso de ubicación denegado" : "No pudimos obtener tu ubicación";
+    sub.textContent = err && err.code === 1 ? "Actívalo en la configuración del navegador o abre la ruta en Google Maps." : "Revisa que el GPS esté encendido e inténtalo de nuevo.";
+    btn.innerHTML = `<iconify-icon icon="ph:crosshair"></iconify-icon> Reintentar`;
+  }
+  function ask(){
+    if (!navigator.geolocation) return fail();
+    bar.classList.add("loading"); main.textContent = "Obteniendo tu ubicación…"; sub.textContent = "Acepta el permiso en tu navegador.";
+    navigator.geolocation.getCurrentPosition(ok, fail, {enableHighAccuracy:true, timeout:12000, maximumAge:60000});
+  }
+  btn.onclick = ask;
+  // pedir permiso al abrir la página (después del loader)
+  const auto = () => setTimeout(ask, 1200);
+  if (navigator.permissions && navigator.permissions.query) {
+    navigator.permissions.query({name:"geolocation"}).then(p => { if (p.state !== "denied") auto(); else fail({code:1}); }).catch(auto);
+  } else auto();
+})();
+
+</script>
+</body>
+</html>
